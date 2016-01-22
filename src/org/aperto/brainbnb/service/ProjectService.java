@@ -18,10 +18,10 @@ public class ProjectService {
 		projectList.add(one);
 		projectList.add(two);
 	}
-	public Project getProject(int i){
-		Project project = projectList.get(i);
-		return project;
-	}
+//	public Project getProject(int i){
+//		Project project = projectList.get(i);
+//		return project;
+//	}
 //	public ProjectService(){
 //		users.put("Doha", "Doha Akil");
 //		users.put("Fatme", "Fatme Chahrour");
