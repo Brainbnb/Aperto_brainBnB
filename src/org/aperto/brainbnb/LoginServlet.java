@@ -40,9 +40,8 @@ public class LoginServlet extends HttpServlet {
 			User user = loginService.getUserDetails(userID);
 			ArrayList<Project> projectListNew = projectService.generateProjectList();
 			request.getSession().setAttribute("user", user);
-			request.setAttribute("projectList", projectListNew);
+			request.getSession().setAttribute("projectList", projectListNew);
 //			request.setAttribute("projectList", projectListNew);
-			System.out.println(projectListNew.isEmpty());
 
 			return;
 			
