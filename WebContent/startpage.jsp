@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1" import="org.aperto.brainbnb.dto.User"
-	import="org.aperto.brainbnb.dto.ProjectList"
 	import="java.util.ArrayList" import="org.aperto.brainbnb.dto.Project"%>
 <!DOCTYPE html>
 <html>
@@ -181,24 +180,14 @@
 						</tr>
 					</thead>
 					<tbody>
-						<% ProjectList projectList = (ProjectList) session.getAttribute("projectList");
-						while(projectList.iterator().hasNext()){ %>
+						 <%
+						 ArrayList<Project> projectList = new ArrayList<Project>();
+						 projectList = (ArrayList<Project>) request.getAttribute("projectList"); %>
+						 
+
 						<tr>
-							<td><%=projectList.iterator().next()%></td>
-							<td><%=projectList.iterator().next()%></td>
-
-						</tr>
-
-
-
-						<%
-							}
-						%>
-
-						<%-- 								<%=user.getUserName()%> --%>
-						<tr>
-							<%-- <%Project project = session.getAttribute();%> --%>
-							<td><a type="submit"> #0001 </a></td>
+							<td> #0001 <%=projectList. %></td>
+					<!-- 		<td><a type="submit"> #0001 </a></td> -->
 							<td>Synfioo</td>
 							<td>01-01-2016</td>
 							<td>Observer</td>
