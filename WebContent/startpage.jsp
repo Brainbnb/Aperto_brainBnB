@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1" import="org.aperto.brainbnb.dto.User"%>
+	pageEncoding="ISO-8859-1" import="org.aperto.brainbnb.dto.User"
+	import="org.aperto.brainbnb.dto.ProjectList"
+	import="java.util.ArrayList" import="org.aperto.brainbnb.dto.Project"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -144,7 +146,7 @@
 
 						</a></li>
 						<li class="vertical-separator">|</li>
-						<li><a href="LogoutServlet"> Log out </a></li> 
+						<li><a href="LogoutServlet"> Log out </a></li>
 						<li class="vertical-separator">|</li>
 						<li><a href="#"> EN </a></li>
 					</ul>
@@ -167,29 +169,44 @@
 
 		<!-- PROJECT TABLE -->
 		<form action="login" method="post">
-		<div id="div-table">
-			<table id="tab" class="tablesorter table-condensed table-responsive">
-				<thead>
-					<tr>
-						<th>No.</th>
-						<th>Name</th>
-						<th>Start</th>
-						<th>Role</th>
-						<th>Status</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-					<%-- <%Project project = session.getAttribute();%> --%>
-						<td><a type = "submit"> #0001 </a></td>
-						<td>Synfioo</td>
-						<td>01-01-2016</td>
-						<td>Observer</td>
-						<td>IN PROCESS</td>
-						<td><progress value="21" max="100"></progress> <!-- <div class="progress-bar"> <span style= "width:3%"></span> </div><p></p> --></td>
-					</tr>
-					
-<!-- 					<tr>
+			<div id="div-table">
+				<table id="tab" class="tablesorter table-condensed table-responsive">
+					<thead>
+						<tr>
+							<th>No.</th>
+							<th>Name</th>
+							<th>Start</th>
+							<th>Role</th>
+							<th>Status</th>
+						</tr>
+					</thead>
+					<tbody>
+						<% ProjectList projectList = (ProjectList) session.getAttribute("projectList");
+						while(projectList.iterator().hasNext()){ %>
+						<tr>
+							<td><%=projectList.iterator().next()%></td>
+							<td><%=projectList.iterator().next()%></td>
+
+						</tr>
+
+
+
+						<%
+							}
+						%>
+
+						<%-- 								<%=user.getUserName()%> --%>
+						<tr>
+							<%-- <%Project project = session.getAttribute();%> --%>
+							<td><a type="submit"> #0001 </a></td>
+							<td>Synfioo</td>
+							<td>01-01-2016</td>
+							<td>Observer</td>
+							<td>IN PROCESS</td>
+							<td><progress value="21" max="100"></progress> <!-- <div class="progress-bar"> <span style= "width:3%"></span> </div><p></p> --></td>
+						</tr>
+
+						<!-- 					<tr>
 						<td>#0002</td>
 						<td>Creative Workline GmbH</td>
 						<td>01-01-2016</td>
@@ -261,9 +278,9 @@
 						<td>IN PROCESS</td>
 						<td><progress value="21" max="100"></progress> <div class="progress-bar"> <span style= "width:3%"></span> </div><p></p></td>
 					</tr> -->
-				</tbody>
-			</table>
-		</div>
+					</tbody>
+				</table>
+			</div>
 		</form>
 	</section>
 
