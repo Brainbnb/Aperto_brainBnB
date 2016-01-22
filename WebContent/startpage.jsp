@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1" import="org.aperto.brainbnb.dto.User"%>
+	pageEncoding="ISO-8859-1" import="org.aperto.brainbnb.dto.User"
+	import="java.util.ArrayList" import="java.util.Iterator"
+	import="org.aperto.brainbnb.dto.Project"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -137,14 +139,14 @@
 						<li class="user-images"><img
 							src="resources/img/User_Bild_2.png" width="50px" height="40px" />
 						</li>
-						<li><a href="#"> <%	User user = (User) session.getAttribute("user");%>
-
-								<%=user.getUserName()%>
+						<li><a href="#"> <%
+ 	User user = (User) session.getAttribute("user");
+ %> <%=user.getUserName()%>
 
 
 						</a></li>
 						<li class="vertical-separator">|</li>
-						<li><a href="LogoutServlet"> Log out </a></li> 
+						<li><a href="LogoutServlet"> Log out </a></li>
 						<li class="vertical-separator">|</li>
 						<li><a href="#"> EN </a></li>
 					</ul>
@@ -167,103 +169,42 @@
 
 		<!-- PROJECT TABLE -->
 		<form action="login" method="post">
-		<div id="div-table">
-			<table id="tab" class="tablesorter table-condensed table-responsive">
-				<thead>
-					<tr>
-						<th>No.</th>
-						<th>Name</th>
-						<th>Start</th>
-						<th>Role</th>
-						<th>Status</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-					<%-- <%Project project = session.getAttribute();%> --%>
-						<td><a type = "submit"> #0001 </a></td>
-						<td>Synfioo</td>
-						<td>01-01-2016</td>
-						<td>Observer</td>
-						<td>IN PROCESS</td>
-						<td><progress value="21" max="100"></progress> <!-- <div class="progress-bar"> <span style= "width:3%"></span> </div><p></p> --></td>
-					</tr>
-					
-<!-- 					<tr>
-						<td>#0002</td>
-						<td>Creative Workline GmbH</td>
-						<td>01-01-2016</td>
-						<td>Observer</td>
-						<td>IN PROCESS</td>
-						<td><progress value="21" max="100"></progress> <div class="progress-bar"> <span style= "width:3%"></span> </div><p></p></td>
-					</tr>
-					<tr>
-						<td>#0003</td>
-						<td>Kinderladen Plappertasche</td>
-						<td>01-01-2016</td>
-						<td>Observer</td>
-						<td>IN PROCESS</td>
-						<td><progress value="21" max="100"></progress> <div class="progress-bar"> <span style= "width:3%"></span> </div><p></p></td>
-					</tr>
-					<tr>
-						<td>#0004</td>
-						<td>Lasinoh Laboratories Inc.</td>
-						<td>01-01-2016</td>
-						<td>Observer</td>
-						<td>IN PROCESS</td>
-						<td><progress value="21" max="100"></progress> <div class="progress-bar"> <span style= "width:3%"></span> </div><p></p></td>
-					</tr>
-					<tr>
-						<td>#0005</td>
-						<td>artLABOR e.V</td>
-						<td>01-01-2016</td>
-						<td>Observer</td>
-						<td>IN PROCESS</td>
-						<td><progress value="21" max="100"></progress> <div class="progress-bar"> <span style= "width:3%"></span> </div><p></p></td>
-					</tr>
-					<tr>
-						<td>#0006</td>
-						<td>Aperto AG</td>
-						<td>01-01-2016</td>
-						<td>Project Manager</td>
-						<td>IN PROCESS</td>
-						<td><progress value="21" max="100"></progress> <div class="progress-bar"> <span style= "width:3%"></span> </div><p></p></td>
-					</tr>
-					<tr>
-						<td>#0007</td>
-						<td>Aperto Move GmbH</td>
-						<td>01-01-2016</td>
-						<td>Observer</td>
-						<td>IN PROCESS</td>
-						<td><progress value="21" max="100"></progress> <div class="progress-bar"> <span style= "width:3%"></span> </div><p></p></td>
-					</tr>
-					<tr>
-						<td>#0008</td>
-						<td>imatics Software GmbH</td>
-						<td>01-01-2016</td>
-						<td>Observer</td>
-						<td>IN PROCESS</td>
-						<td><progress value="21" max="100"></progress> <div class="progress-bar"> <span style= "width:3%"></span> </div><p></p></td>
-					</tr>
-					<tr>
-						<td>#0009</td>
-						<td>Keylight GmbH</td>
-						<td>01-01-2016</td>
-						<td>Observer</td>
-						<td>IN PROCESS</td>
-						<td><progress value="21" max="100"></progress> <div class="progress-bar"> <span style= "width:3%"></span> </div><p></p></td>
-					</tr>
-					<tr>
-						<td>#0010</td>
-						<td>proventis GmbH</td>
-						<td>01-01-2016</td>
-						<td>Observer</td>
-						<td>IN PROCESS</td>
-						<td><progress value="21" max="100"></progress> <div class="progress-bar"> <span style= "width:3%"></span> </div><p></p></td>
-					</tr> -->
-				</tbody>
-			</table>
-		</div>
+			<div id="div-table">
+				<table id="tab" class="tablesorter table-condensed table-responsive">
+					<thead>
+						<tr>
+							<th>No.</th>
+							<th>Name</th>
+							<th>Start</th>
+							<th>End</th>
+							<th>Role</th>
+							<th>Status</th>
+						</tr>
+					</thead>
+					<tbody>
+						<%
+							ArrayList<Project> projectList = (ArrayList<Project>) session.getAttribute("projectList");
+							if (projectList != null) {
+								for (int i = 0; i < projectList.size(); i++) {
+						%>
+						<tr>
+							<td><%=projectList.get(i).getProjectID()%> </td>
+							<td><%=projectList.get(i).getProjectName()%></td>
+							<td><%=projectList.get(i).getStartDate()%></td>
+							<td><%=projectList.get(i).getEndDate()%></td>
+							<td><%=projectList.get(i).getRole()%></td>
+							<td>IN PROCESS</td>
+							<td><progress value="21" max="100"></progress> <!-- <div class="progress-bar"> <span style= "width:3%"></span> </div><p></p> --></td>
+
+						</tr>
+
+						<%
+							}
+							}
+						%>
+					</tbody>
+				</table>
+			</div>
 		</form>
 	</section>
 

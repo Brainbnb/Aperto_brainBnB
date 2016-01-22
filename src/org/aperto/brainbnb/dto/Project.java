@@ -8,13 +8,15 @@ public class Project {
 	private String projectName;
 	private String description;
 	private String startDate;
+	private String role;
 	private String endDate;
 	
-	public Project(Integer projectID, String projectName, String description, String startDate, String endDate) {
+	public Project(Integer projectID, String projectName, String description, String startDate, String role, String endDate) {
 		this.projectID = projectID;
 		this.projectName = projectName;
 		this.description = description;
 		this.startDate = startDate;
+		this.role = role;
 		this.endDate = endDate;
 	}
 	
@@ -51,6 +53,14 @@ public class Project {
 	}
 	public void setEndDate(String endDate) {
 		this.endDate = endDate;
+	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
 	}
 
 	
