@@ -48,7 +48,7 @@
 	<nav id="side_menu">
   		<ul class="container-fluid">
     		<li id="side_id"><a href="#info"		><i class="fa fa-info fa-fw fa-2x" >		</i>INFORMATION</a></li> 
-    		<li id="side_id"><a href="#"			><i class="fa fa-user fa-fw fa-2x" >		</i>TEAM</a></li> 
+    		<li id="side_id"><a href="ShowTeamServlet"><i class="fa fa-user fa-fw fa-2x" >		</i>TEAM</a></li> 
  			<li id="side_id"><a href="#workflow" 	><i class="fa fa-folder-open-o fa-fw fa-2x"></i>WORKFLOW   </a></li>
   			<li id="side_id"><a href="#resource" 	><i class="fa fa-archive fa-fw  fa-2x">		</i>RESOURCE   </a></li>
   			<li id="side_id"><a href="#calendar" 	><i class="fa fa-calendar-o fa-fw fa-2x">	</i>CALENDAR   </a></li>  
@@ -72,7 +72,7 @@
 			</tr>
 			<tr>
 				<td id="summaryclmtd">project manager	</td><td>Name Surname</td>
-				<td id="financialclmtd">actual cost		</td><td>€€€</td><td id="financialclmtd2"><i id="graph-icon" class="fa fa-bar-chart fa-2x"></i></i></td><td id="financialclmtd2">%</td>
+				<td id="financialclmtd">actual cost		</td><td>€€€</td><td id="financialclmtd2"><i id="graph-icon" class="fa fa-bar-chart fa-2x"></i></td><td id="financialclmtd2">%</td>
 			</tr>
 			<tr>
 				<td id="summaryclmtd">last modification	</td><td>01.01.01</td>
@@ -124,7 +124,7 @@
 		</tbody>
 	
 	</table>
-
+</section>
 
 
 </body>
