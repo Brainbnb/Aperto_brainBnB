@@ -80,7 +80,7 @@
 								for (int i = 0; i < projectList.size(); i++) {
 						%>
 						<tr>
-							<td><a href="ProjectInfoServlet" type="submit"><%=projectList.get(i).getProjectID()%></a></td>
+							<td><a href="ProjectInfoServlet" type="submit" id="i"><%=projectList.get(i).getProjectID()%></a></td>
 							<td><%=projectList.get(i).getProjectName()%></td>
 							<td><%=projectList.get(i).getRole()%></td>
 							<td><%=projectList.get(i).getStartDate()%></td>
