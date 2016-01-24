@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" import="java.util.ArrayList" import="org.aperto.brainbnb.dto.Project" import="org.aperto.brainbnb.dto.User"%>
 
 <!DOCTYPE html>
 <html>
@@ -24,9 +24,10 @@
 		<div>
 			<ul class= "nav navbar-nav navbar-right">
 				<li class="user-images"> <img src= "resources/img/User_Bild_2.png" width="50px" height= "40px"/> </li>
-				<li> <a href= "#"> Name Surname</a> </li>
+				<li> <a href= "#"><% User user = (User) session.getAttribute("user");
+	 					 %> <%=user.getUserName()%></a> </li>
 				<li class="vertical-separator"> | </li>
-				<li> <a href= "#"> Log out </a> </li>
+				<li> <a href= "LogoutServlet"> Log out </a> </li>
 				<li class="vertical-separator"> | </li>
 				<li> <a href= "#"> EN </a> </li>	
 			</ul>
@@ -36,7 +37,8 @@
 </header>
 
 <div id= "top">
-	<h2>01-Project</h2>
+	<%Project currentProject = (Project) session.getAttribute("currentProject"); %>
+	<h2><%=currentProject.getProjectName()%></h2>
 	</div>
 	<!-- HEADER  -->
 	<div id="header">		
@@ -67,7 +69,7 @@
 		</thead>
 		<tbody>
 			<tr>
-				<td id="summaryclmtd">project name		</td><td>01-Project</td>
+				<td id="summaryclmtd">project name		</td><td><%=currentProject.getProjectName()%></td>
 				<td id="financialclmtd">total planned cost	</td><td>€€€</td><td id="financialclmtd2"></td><td id="financialclmtd2">%</td>
 			</tr>
 			<tr>
@@ -92,7 +94,7 @@
 	<table class="order-table">
 	<tbody>
 			<tr>
-				<td id="summaryclmtd" valign="top">description</td><td id="descriptiotexttd">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. </td>
+				<td id="summaryclmtd" valign="top">description</td><td id="descriptiotexttd"><%=currentProject.getDescription()%></td>
 			</tr>
 		</tbody>
 	</table>
@@ -106,8 +108,8 @@
 		</thead>
 		<tbody>
 			<tr>
-				<td id="scheduletd">start date (real)</td><td>01.01.01</td>
-				<td id="scheduletd">end date		 </td><td>01.01.01</td>
+				<td id="scheduletd">start date (real)</td><td><%=currentProject.getStartDate()%></td>
+				<td id="scheduletd">end date		 </td><td><%=currentProject.getEndDate() %></td>
 			</tr>
 			<tr>
 				<td></td><td></td>
