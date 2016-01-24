@@ -33,11 +33,20 @@ public class ProjectInfoServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String currentIndexString;
+		int currentIndexInt;
+		Project currentProject;
+		
+		currentIndexString = request.getParameter("id");
+		currentIndexInt = Integer.parseInt(currentIndexString);
+		System.out.println(currentIndexInt);
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		response.sendRedirect("project_info.jsp");
 		ProjectService projectService = new ProjectService();
 		ArrayList<Project> projectListNew = projectService.generateProjectList();
-		request.getSession().setAttribute("projectList", projectListNew);
+		currentProject = projectListNew.get(currentIndexInt);
+		request.getSession().setAttribute("currentProject", currentProject);
+		
 
 		return;
 	}
