@@ -109,7 +109,7 @@
 						%>
 				<div class="team-member">
 					<img class="team-photo"	src="<%=employeeList.get(i).getPicturePath()%>">
-					<h3><%=employeeList.get(i).getName()%></h3>
+					<h3><%=employeeList.get(i).getName()%><%=employeeList.get(i).getSurName()%></h3>
 					<span> <%=employeeList.get(i).getJobTitle()%> </span>
 					<div class="social">
       			<a><i class="fa fa-envelope-o" href="mailto:calafuri.silvia@gmail.com"></i></a>
