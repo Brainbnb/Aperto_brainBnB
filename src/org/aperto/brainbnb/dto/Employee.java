@@ -4,17 +4,15 @@ package org.aperto.brainbnb.dto;
 
 public class Employee {
 	private String name;
-	private String surName;
 	private String password;
 	private String jobTitle;
 	private String picturePath;
 	private boolean available;
 //	private HashMap<String, Integer> skills;
 	
-	public Employee(String name, String surName, String password, String jobTitle, String picturePath,
+	public Employee(String name, String password, String jobTitle, String picturePath,
 			boolean available) {
 		this.name = name;
-		this.surName = surName;
 		this.password = password;
 		this.jobTitle = jobTitle;
 		this.picturePath = picturePath;
@@ -31,12 +29,7 @@ public class Employee {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getSurName() {
-		return surName;
-	}
-	public void setSurName(String surName) {
-		this.surName = surName;
-	}
+
 	public String getPassword() {
 		return password;
 	}
