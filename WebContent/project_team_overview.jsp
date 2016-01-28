@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" import="org.aperto.brainbnb.dto.Employee"
-	import="java.util.ArrayList"%>
+	import="java.util.ArrayList" import="org.aperto.brainbnb.dto.User"%>
 
 <!DOCTYPE html>
 <html>
@@ -38,9 +38,10 @@
 						<li class="user-images"><img
 							src="resources/img/User_Bild_2.png" width="50px" height="40px" />
 						</li>
-						<li><a href="#"> Name Surname</a></li>
+						<li><a href="#"><% User user = (User) session.getAttribute("user");
+	 					 %> <%=user.getUserName()%></a></li>
 						<li class="vertical-separator">|</li>
-						<li><a href="#"> Log out </a></li>
+						<li><a href="LogoutServlet"> Log out </a></li>
 						<li class="vertical-separator">|</li>
 						<li><a href="#"> EN </a></li>
 					</ul>

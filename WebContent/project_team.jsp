@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" import="org.aperto.brainbnb.dto.User"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -30,9 +30,10 @@
 				<div>
 					<ul class= "nav navbar-nav navbar-right">
 						<li class="user-images"> <img src= "resources/theme1/img/User_Bild_2.png" width="50px" height= "40px"/> </li>
-						<li> <a href= "#"> Name Surname</a> </li>
+						<li> <a href= "#"><% User user = (User) session.getAttribute("user");
+	 					 %> <%=user.getUserName()%></a> </li>
 						<li class="vertical-separator"> | </li>
-						<li> <a href= "#"> Log out </a> </li>
+						<li> <a href= "LogoutServlet"> Log out </a> </li>
 						<li class="vertical-separator"> | </li>
 						<li> <a href= "#"> EN </a> </li>	
 					</ul>
