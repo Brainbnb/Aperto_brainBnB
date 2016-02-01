@@ -10,8 +10,10 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<link rel="stylesheet" href="resources/css/start_page.css" type="text/css" />
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
-
+	
 	
 </head>
 <body>
@@ -56,8 +58,8 @@
 			<div pseudo="-webkit-input-placeholder" style="display: block !important; text-overflow: clip;"></div>
 		</form>
 		
-	<!-- PROJECT TABLE -->
 	
+	<!-- PROJECT TABLE -->
 		<div class="row">
 		  <div id="admin" class="col s12">
 		    <div class="card material-table">
@@ -66,11 +68,44 @@
 		      <table id="datatable">
 		        <thead>
 		          <tr>
-		            <th>No.</th>
+		            <th style="padding-bottom: 35px">No.</th>
 		            <th>Name</th>
 		            <th>Role</th>
 		            <th>Start date</th>
 		            <th>Status</th>
+		            <th></th>
+		            <th>
+		            <!-- BUTTON -->
+		<div class="material-button-anim">
+  			<ul class="list-inline" id="options">
+    			<li class="option">
+      				<button class="material-button option1" type="button">
+        				<span class="fa fa-plus" aria-hidden="true"></span>
+      				</button>
+    			</li>
+    			<li class="option">
+      				<button class="material-button option2" type="button">
+        				<span class="fa fa-bar-chart" aria-hidden="true"></span>
+      				</button>
+    			</li>
+    			<!-- <li class="option">
+      				<button class="material-button option3" type="button">
+        				<span class="fa fa-pencil" aria-hidden="true"></span> 
+      				</button>
+    			</li> -->
+  			</ul>
+  			<button class="material-button material-button-toggle" type="button">
+    			<span class="fa fa-bars" aria-hidden="true"></span>
+  			</button>
+		</div>
+		<script> 
+			$('.material-button-toggle').click(function () {
+        		$(this).toggleClass('open');
+        		$('.option').toggleClass('scale-on');
+			});
+		</script>
+		
+		            </th>
 		          </tr>
 		        </thead>
 		        <tbody>
@@ -84,10 +119,10 @@
 							<td><%=projectList.get(i).getProjectName()%></td>
 							<td><%=projectList.get(i).getRole()%></td>
 							<td><%=projectList.get(i).getStartDate()%></td>
-<%-- 						<td><%=projectList.get(i).getEndDate()%></td>
- --%>						<td>IN PROCESS</td>
+<%-- 						<td><%=projectList.get(i).getEndDate()%></td>--%>						
+							<td>IN PROCESS</td>
 							<td><progress value="21" max="100"></progress> <!-- <div class="progress-bar"> <span style= "width:3%"></span> </div><p></p> --></td>
-
+					
 						</tr>
 
 						<%

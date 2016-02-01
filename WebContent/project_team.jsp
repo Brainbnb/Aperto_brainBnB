@@ -7,8 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Aperto | BrainBnB</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<link rel="stylesheet" href="resources/theme1/css/project_team.css" type="text/css" />
-	<link rel='stylesheet' src= "resources/theme1/font/ApertoAGReg" type='text/css'>
+	<link rel="stylesheet" href="resources/css/project_team.css" type="text/css" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -25,11 +24,11 @@
 			<div class= "container-fluid">
 				<div class= "navbar-header"> 
 				<a class="navbar-brand" href="#">
-					<img src= "resources/theme1/img/aperto-logo.svg" alt= "Aperto" align= "left" width= "114px" height= "21px" />	  </a>
+					<img src= "resources/img/aperto-logo.svg" alt= "Aperto" align= "left" width= "114px" height= "21px" />	  </a>
 				</div>
 				<div>
 					<ul class= "nav navbar-nav navbar-right">
-						<li class="user-images"> <img src= "resources/theme1/img/User_Bild_2.png" width="50px" height= "40px"/> </li>
+						<li class="user-images"> <img src= "resources/img/User_Bild_2.png" width="50px" height= "40px"/> </li>
 						<li> <a href= "#"><% User user = (User) session.getAttribute("user");
 	 					 %> <%=user.getUserName()%></a> </li>
 						<li class="vertical-separator"> | </li>
@@ -82,7 +81,7 @@
 	</div>
 	
 	<figure>
-				<img  class="avatar" src="resources/theme1/img/foto_Silvia_Calafuri.jpg">
+				<img  class="avatar" src="resources/img/foto_Silvia_Calafuri.jpg">
 	</figure>
 	<!-- <div class="carouselContainer">
 	  <br>
