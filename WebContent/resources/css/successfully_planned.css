@@ -1,0 +1,74 @@
+@CHARSET "UTF-8";
+
+@font-face {
+	font-family:"ApertoAG Regular";
+	src: url(../font/ApertoAGReg.woff) format("woff");
+	font-style:normal;
+	font-weight:300
+}
+@font-face {
+	font-family:"ApertoAG Medium";
+	src: url(../font/ApertoAGMed.woff) format("woff");
+	font-style:normal;
+	font-weight:400
+}
+
+body 					{	background: #222222;
+							color	  : #ffffff;	
+							font-family: ApertoAG Regular; }
+  			
+/****** APERTO LOGO, USER usw *******/		
+li						{	display: block;	}
+				
+.navbar-brand 			{	cursor: default;	}	
+		
+.container				{	background	: #222222;
+							margin		: 80px auto;
+  							width		: 360px;	}
+   
+.vertical-separator  	{	color		: #efefef;
+							margin-top	:14px;	}
+							
+.user-images			{	margin-top: 5px;	}
+
+
+/****** BODY ******/
+#main, #second	{	width: 90%;	
+					height: auto;	}
+				
+h1 			{  	background		: #222222;
+ 				color			: white;
+ 				font-family		: ApertoAG Medium;
+ 				font-size		: 60px;
+   				text-align		: center;
+ 				margin			: -20px -20px 21px;
+ 				padding-bottom	: 3%;
+ 				padding-top		: 14%;
+    			line-height		: 40px;		  }
+    			
+h2 			{	background		: #222222;
+ 				color			: white;
+ 				font-family		: ApertoAG Medium;
+ 				font-size		: 50px;
+   				text-align		: center;
+ 				margin			: -20px -20px 21px;
+    			line-height		: 40px;	 		  }
+    			
+.btn		{ padding-left: 46.5%;}   
+				  
+.fa-home 	{ color		: white;	
+			  background: #c0c0c0;
+			  height	: 0;
+			  padding	: 23%;
+			  padding-bottom: 76%;
+			  padding-top	: 18%;
+			  border-radius	: 50%;
+			  border		:none;
+    		  overflow		:hidden;
+       		  box-shadow	: 0 0 3px gray;	}
+
+.fa-home:hover 	{ color		: white;
+				  background: #9c0;	}
+
+
+								
