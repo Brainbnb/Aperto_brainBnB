@@ -44,7 +44,8 @@ h1 			{  	background		: #222222;
  				margin			: -20px -20px 21px;
  				padding-bottom	: 3%;
  				padding-top		: 14%;
-    			line-height		: 40px;		  }
+    			line-height		: 40px;		
+    			cursor			: default;  }
     			
 h2 			{	background		: #222222;
  				color			: white;
@@ -52,7 +53,8 @@ h2 			{	background		: #222222;
  				font-size		: 50px;
    				text-align		: center;
  				margin			: -20px -20px 21px;
-    			line-height		: 40px;	 		  }
+    			line-height		: 40px;	 	
+    			cursor			: default; 	  }
     			
 .btn		{ padding-left: 46.5%;}   
 				  
