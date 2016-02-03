@@ -176,7 +176,7 @@
 						<tbody>
 							<tr>
 								<th>
-									<label for="select" id="role_label">Menu 2</label> 
+									<label for="select" id="role_label">Menu 1</label> 
 									<i class="fa fa-plus"></i>
 								</th>
 								<th>
@@ -234,7 +234,7 @@
 									<a href="#" id="add_worker">add Worker</a>
 								</td>
     						</tr>
-							
+
 						</tbody>
 					</table>
 				</div>
