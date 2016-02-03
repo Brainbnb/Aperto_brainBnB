@@ -221,22 +221,18 @@ hr 						{	margin-top: 30px;
 								color			: #222222;
   								text-align		: left;
  			 					overflow		: hidden;
-  								width			: 100%;
+  								width			: 54.5%;
   								position		: relative;
   								height			: auto;
-  								padding-bottom	: 30px;	}
+  								padding-bottom	: 30px;
+  								table-layout	: fixed;	}
   							
 .role_table td 				{	padding-top: 17px;	}
 
-.role_table th 				{	padding-top: 10px;	}
+.role_table th 				{	padding-top: 10px;		}
 
 #theader					{	width: 50%;	}
 
-.role_table td:last-child, 
-.role_table th:last-child  	{	padding-left: 5%;	}
-
-.role_table td:last-child, 
-.role_table th:last-child  	{	padding-right: 100px;	}
 
 .order-table #role_label	{	color       : #9c0;
 								font-size	: 16px;			
@@ -256,7 +252,8 @@ hr 						{	margin-top: 30px;
 								
 .order-table #add_worker	{	color		: #b3b3b3;
 								font-family	: ApertoAG Regular;
-								font-size	: 15px;			  }
+								font-size	: 15px;			  
+								padding-left: 20%;}
 
 .order-table #add_worker:hover	{	color		: #9c0;
 									font-family	: ApertoAG Regular;

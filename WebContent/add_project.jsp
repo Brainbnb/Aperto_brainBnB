@@ -113,8 +113,6 @@
 									<label for="select" id="role_label">Menu 1</label> 
 									<i class="fa fa-plus"></i>
 								</th>
-								<th>
-								</th>
 								<th></th>
 							<tr>
 								<td>	
@@ -128,7 +126,6 @@
       										<option>Role 7</option>
     									</select>
     							</td>
-    							<td></td>
     							<td>
 									<a href="#" id="add_worker">add Worker</a>
     							</td>
@@ -146,7 +143,6 @@
       										<option>Role 7</option>
     									</select>
     							</td>
-    							<td></td>
     							<td>
 									<a href="#" id="add_worker">add Worker</a>
 								</td>
@@ -163,7 +159,6 @@
       										<option>Role 7</option>
     									</select>
     							</td>
-    							<td></td>
     							<td>
 									<a href="#" id="add_worker">add Worker</a>
 								</td>
@@ -176,12 +171,11 @@
 						<tbody>
 							<tr>
 								<th>
-									<label for="select" id="role_label">Menu 1</label> 
+									<label for="select" id="role_label">Menu 2</label> 
 									<i class="fa fa-plus"></i>
 								</th>
 								<th>
 								</th>
-								<th></th>
 							<tr>
 								<td>	
     									<select id="role_select">
@@ -194,7 +188,6 @@
       										<option>Role 7</option>
     									</select>
     							</td>
-    							<td></td>
     							<td>
 									<a href="#" id="add_worker">add Worker</a>
     							</td>
@@ -212,7 +205,6 @@
       										<option>Role 7</option>
     									</select>
     							</td>
-    							<td></td>
     							<td>
 									<a href="#" id="add_worker">add Worker</a>
 								</td>
@@ -229,7 +221,6 @@
       										<option>Role 7</option>
     									</select>
     							</td>
-    							<td></td>
     							<td>
 									<a href="#" id="add_worker">add Worker</a>
 								</td>
