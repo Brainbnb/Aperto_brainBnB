@@ -46,8 +46,6 @@
 	<div id= "top">
 		<h2>Project Summary</h2>
 	</div>
-	<!-- HEADER  -->
-	<div id="header"></div>	
 	
 	<!-- MAIN -->
 	<section>

@@ -6889,10 +6889,7 @@ var getData = function () {
 <div id= "top">
 	<h2>Project Summary</h2>
 	</div>
-	<!-- HEADER  -->
-	<div id="header">		
-	<!-- SEARCH CONTAINER -->	
-	</div>	
+
 <!-- MAIN -->
 <section>
  <!-- SEARCH CONTAINER -->
