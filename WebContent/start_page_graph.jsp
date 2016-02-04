@@ -6895,16 +6895,44 @@ var getData = function () {
 	</div>	
 <!-- MAIN -->
 <section>
-
  <!-- SEARCH CONTAINER -->
 	 <form class="search-container">
 		<input class= "search-box" type="search" placeholder="Search" aria-controls="datatable" />
 		<div pseudo="-webkit-input-placeholder" style="display: block !important; text-overflow: clip;"></div>
 	</form>
-
+	
+	 <!-- BUTTON -->
+		<div class="material-button-anim">
+  			<ul class="list-inline" id="options">
+    			<li class="option">
+      				<button class="material-button option1" type="button">
+        				<span class="fa fa-plus" aria-hidden="true"></span>
+      				</button>
+    			</li>
+    			<li class="option">
+      				<button class="material-button option2" type="button">
+        				<span class="fa fa-bar-chart" aria-hidden="true"></span>
+      				</button>
+    			</li>
+    			<!-- <li class="option">
+      				<button class="material-button option3" type="button">
+        				<span class="fa fa-pencil" aria-hidden="true"></span> 
+      				</button>
+    			</li> -->
+  			</ul>
+  			<button class="material-button material-button-toggle" type="button">
+    			<span class="fa fa-bars" aria-hidden="true"></span>
+  			</button>
+		</div>
+		<script> 
+			$('.material-button-toggle').click(function () {
+        		$(this).toggleClass('open');
+        		$('.option').toggleClass('scale-on');
+			});
+		</script>
 </section>
+ 
 <!-- PROJECT TABLE -->
-
  	<div class="project-container">
     	<div class="heading">
       		<h2>Projects</h2>
