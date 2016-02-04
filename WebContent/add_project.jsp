@@ -46,10 +46,6 @@
 	<div id="top">
 		<h2>Add Project</h2>
 	</div>
-	<!-- HEADER  -->
-	<div id="header">
-		<!-- SEARCH CONTAINER -->
-	</div>
 
 
 	<!-- PAGE -->

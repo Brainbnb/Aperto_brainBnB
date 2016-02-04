@@ -40,10 +40,7 @@
 	<%Project currentProject = (Project) session.getAttribute("currentProject"); %>
 	<h2><%=currentProject.getProjectName()%></h2>
 	</div>
-	<!-- HEADER  -->
-	<div id="header">		
-	<!-- SEARCH CONTAINER -->	
-	</div>	
+
 
 <div id="nav">
 <!-- SIDE MENU -->

@@ -12,44 +12,43 @@
 	font-style:normal;
 	font-weight:400
 }
-  			
-
-#top					{	position: fixed;
-  							top: 0;
-  							left: 0;
-  							z-index: 999;
-  							width: 100%;
-  							height:15%;
-  							background-color: #222;	}
-#top h2 				{	padding-top	: 3.3%;
-							padding-left: 1%;
-							font-size	: 25px;	}
-							
-#header					{	padding-top		: 75px; 
-							padding-left	: 60px;
-							padding-bottom	: 40px;	
-							}
-							
-@font-face 				{	font-family: exampleFont;
-  							src: url(sansation_light.woff); }
+  	
   			
 body 					{	background: #222222;
 							color	  : #ffffff;	}
+									
+/****** APERTO LOGO, USER usw *******/		
+li						{	display: block;	}
 				
 .navbar-brand 			{	cursor: default;	}	
 		
 .container				{	background	: #222222;
 							margin		: 80px auto;
-  							width		: 360px;	}
+  							width		: 360px;
+  							padding-top	: 8.2%;	}
    
 .vertical-separator  	{	color		: #efefef;
 							margin-top	:14px;	}
 							
 .user-images			{	margin-top: 5px;	}
 
-section					{	padding-top: 70px; 
+/******* BODY *******/
+#top					{	position: fixed;
+  							top		: 0;
+  							left	: 0;
+  							z-index	: 999;
+  							width	: 100%;
+  							height	:17%;
+  							background-color: #222;	}
+  							
+#top h2 				{	padding-top	: 3.3%;
+							padding-left: 1%;
+							font-size	: 25px;	}
+
+section					{	padding-top: 12%; 
 							padding-left: 60px;	}
-	 
+
+/******* SEARCH BAR *******/						
 .search-container		{	position	:left;	}
 
 .search-box				{	background		: url("../img/search-icon.png") 
@@ -91,7 +90,7 @@ section					{	padding-top: 70px;
 							
 .search-box:not(:focus) {	text-indent: -5000px;	} 
 
-/****** TABELLA ******/
+/****** TABLE ******/
 
 div.material-table 		{	padding: 0;	}
 
@@ -193,7 +192,8 @@ div.material-table table tr td {	padding		: 0 50px 0 60px;			/* contenuto della 
  					 				white-space	: nowrap;
   									overflow	: hidden;
   									vertical-align	: middle;
-  									text-overflow: ellipsis;	}
+  									text-overflow: ellipsis;	
+  									cursor: default;}
 
 div.material-table table tr td a {
   color: inherit;

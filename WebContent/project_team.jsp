@@ -44,10 +44,6 @@
 	<div id= "top">
 	<h2>01-Project</h2>
 	</div>
-	<!-- HEADER  -->
-	<div id="header">		
-	<!-- SEARCH CONTAINER -->	
-	</div>	
 	
 	<div id="nav">
 	<!-- SIDE MENU -->
@@ -83,70 +79,13 @@
 	<figure>
 				<img  class="avatar" src="resources/img/foto_Silvia_Calafuri.jpg">
 	</figure>
-	<!-- <div class="carouselContainer">
-	  <br>
-	  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-	   
-	
-	    Wrapper for slides
-	    <div class="carousel-inner" role="listbox">
-	
-	      <div class="item active">
-	        <img src="resources/theme1/img/User_Bild_2.png" alt="Name Surname">
-	        <div class="carousel-caption">
-	          <h3>Name Surname</h3>          
-	        </div>
-	      </div>
-	
-	      <div class="item">
-	        <img src="resources/theme1/img/User_Bild_2.png" alt="Name Surname">
-	        <div class="carousel-caption">
-	          <h3>Name Surname</h3>
-	        </div>
-	      </div>
-	    
-	      <div class="item">
-	        <img src="resources/theme1/img/User_Bild_2.png" alt="Name Surname">
-	        <div class="carousel-caption">
-	          <h3>Name Surname</h3>
-	        </div>
-	      </div>
-	
-	      <div class="item">
-	        <img src="resources/theme1/img/User_Bild_2.png" alt="Name Surname">
-	        <div class="carousel-caption">
-	          <h3>Name Surname</h3>
-	        </div>
-	      </div>
-	    </div>
-	
-	    Left and right controls
-	    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-	      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-	      <span class="sr-only">Previous</span>
-	    </a>
-	    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-	      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-	      <span class="sr-only">Next</span>
-	    </a>
-	   	
-	   	Indicators
-	    <ol class="carousel-indicators">
-	      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-	      <li data-target="#myCarousel" data-slide-to="1"></li>
-	      <li data-target="#myCarousel" data-slide-to="2"></li>
-	      <li data-target="#myCarousel" data-slide-to="3"></li>
-	    </ol>
-	  </div>
-	</div>
-	</section> -->
 	
 	<section class="container">
-		<table class="order-table">
+		<table class="order-table" id="table1">
 			<thead>
 				<tr>
-					<th id="personalinfoclm">personal info		</th><th></th>
-					<th id="currenttaskclm">current task	</th><th></th>
+					<th style="padding-left: 4%">personal info</th><th></th>
+					<th style="padding-left: 3%">current task	</th><th></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -158,47 +97,6 @@
 					<td id="personalinfoclmtd">job title	</td><td id="personalinfoclmtd2">designer</td>
 					<td id="currenttaskclmtd"></td><td>
 					
-					<!-- GRAPH -->
-							<!-- <canvas></canvas> 
-								<script>
-									var data = [70, 30];									/* graph daten 70% 30% usw*/
-									
-									var canvas  = document.querySelector("canvas"),      
-									    context = canvas.getContext("2d");
-									
-									var width  = canvas.width,
-									    height = canvas.height,
-									    radius = Math.min(width, height) / 2;
-									
-									var colors = [ "#9c0", "#f9eaa6" ];
-									
-									var arc = d3.arc()
-									    .outerRadius(radius - 10)
-									    .innerRadius(radius - 23)
-									    .padAngle(0.03)
-									    .context(context);
-									
-									var pie = d3.pie();
-									
-									var arcs = pie(data);
-									
-									context.translate(width / 2, height / 2);
-									
-									context.globalAlpha = 0.5;
-									arcs.forEach(function(d, i) {
-									  context.beginPath();
-									  arc(d);
-									  context.fillStyle = colors[i];
-									  context.fill();
-									});
-									
-									context.globalAlpha = 1;
-									context.beginPath();
-									arcs.forEach(arc);
-									context.lineWidth = 1.5;
-									context.stroke();
-								</script> -->
-
 						<div class="charts--container">
 						      <div id="pieChart">
 						        <svg id="pieChartSVG">
@@ -309,18 +207,20 @@
 				</tr>
 			</tbody>	
 		</table>
-   		<hr></hr>
-   		<table class="order-table">
+	</section>
+	<hr></hr>
+	<section>
+   		<table class="order-table" id= "table2">
 			<thead>
 				<tr>
-					<th id="personalinfoclm">advanced info		</th><th></th>
-					<th id="currenttaskclm"></th><th></th>
+					<th style="padding-left: 4%">advanced info</th><th></th>
+					<th></th><th></th><th></th><th></th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td id="personalinfoclmtd">available	</td><td id="personalinfoclmtd2">am I available?</td>
-					<td id="currenttaskclmtd">skills		</td><td>	
+				<tr style="vertical-align: top">
+					<td id="personalinfoclmtd">available	</td><td>am I available?</td>
+					<td id="personalinfoclmtd" style="padding-left: 6%">skills		</td><td>	
 					
 					<div id="resumeProficienciesTop">css3/css</div>
 						<div id="wrapper"><div class="star-rating"><span style="width:0%"></span></div>	</div>
@@ -342,81 +242,6 @@
 						
 					<div id="resumeProficienciesTop">mobile app design</div>
 						<div id="wrapper"><div class="star-rating"><span style="width:10%"></span></div>	</div>					
-					
-					<!-- SKILLS GRAPH -->
-					    <!--  <div id="resumeProficienciesTop">css3/css</div>
-					     <div id="resumeProficienciesBottom">
-					     	<div class="progress">
-					        	<div class="html progress-bar progress-bar-info" role="progressbar" style="width: 0%"> </div>
-					      	</div>
-					     </div>
-					
-					    <div id="resumeProficienciesTop">jquery</div>END resumeProficienciesTop
-					
-					    <div id="resumeProficienciesBottom">
-					      <div class="progress">
-					        <div class="jquery progress-bar progress-bar-info" role="progressbar" style="width: 0%"></div>
-					      </div>
-					    </div>END resumeProficienciesBottom
-					
-					    <div id="resumeProficienciesTop">javascript</div>END resumeProficienciesTop
-					
-					    <div id="resumeProficienciesBottom">
-					      <div class="progress">
-					        <div class="javascript progress-bar progress-bar-info" role="progressbar" style="width: 0%">
-					        </div>
-					      </div>
-					    </div>END resumeProficienciesBottom
-					
-					    <div id="resumeProficienciesTop">bootstrap</div>END resumeProficienciesTop
-					
-					    <div id="resumeProficienciesBottom">
-					      <div class="progress">
-					        <div class="bootstrap progress-bar progress-bar-info" role="progressbar" style="width: 0%">
-					        </div>
-					      </div>
-					    </div>END resumeProficienciesBottom
-					
-					    <div id="resumeProficienciesTop">wordpress</div>END resumeProficienciesTop
-					
-					    <div id="resumeProficienciesBottom">
-					      <div class="progress">
-					        <div class="wordpress progress-bar progress-bar-info" role="progressbar" style="width: 0%">
-					        </div>
-					      </div>
-					    </div>END resumeProficienciesBottom   
-					
-					    <div id="resumeProficienciesTop">user interface (ui)</div>END resumeProficienciesTop
-					
-					    <div id="resumeProficienciesBottom">
-					      <div class="progress">
-					        <div class="ui progress-bar progress-bar-info" role="progressbar" style="width: 0%">
-					        </div>
-					      </div>
-					    </div>ENDresumeProficienciesBottom   
-					
-					    <div id="resumeProficienciesTop">mobile app design</div>END resumeProficienciesTop
-					    <div id="resumeProficienciesBottom">
-					     	<div class="progress">
-					        	<div class="mobile progress-bar progress-bar-info" role="progressbar" style="width: 0%">
-					         		<span class="sr-only"></span>
-					       		</div>
-					     	</div>
-					    </div>END resumeProficienciesBottom
-					</div>
-					
-					<script>
-					$(document).ready(function () {
-					    $('.html').css('width', '100%');
-					    $('.css').css('width', '100%');
-					    $('.jquery').css('width', '70%');
-					    $('.javascript').css('width', '55%');
-					    $('.bootstrap').css('width', '90%');
-					    $('.wordpress').css('width', '85%');
-					    $('.ui').css('width', '100%');
-					    $('.mobile').css('width', '85%');
-					});
-					</script>	 -->
 					</td>
 				</tr>
 			</tbody>

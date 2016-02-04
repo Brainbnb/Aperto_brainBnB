@@ -7,17 +7,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Aperto | BrainBnB</title>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<link rel="stylesheet" href="resources/css/project_team_overview.css"
-	type="text/css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="resources/css/project_team_overview.css" type="text/css" />
 <link rel='stylesheet' href="resources/font/ApertoAGReg" type='text/css'>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script
-	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 <script src='//codepen.io/assets/editor/live/css_live_reload_init.js'></script>
 
@@ -52,10 +47,6 @@
 
 	<div id="top">
 		<h2>01-Project</h2>
-	</div>
-	<!-- HEADER  -->
-	<div id="header">
-		<!-- SEARCH CONTAINER -->
 	</div>
 
 	<div id="nav">

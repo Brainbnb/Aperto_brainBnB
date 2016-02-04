@@ -44,10 +44,6 @@
 	<div id="top">
 		<h2>01-Project</h2>
 	</div>
-	<!-- HEADER  -->
-	<div id="header">
-		<!-- SEARCH CONTAINER -->
-	</div>
 
 	<div id="nav">
 		<!-- SIDE MENU -->
