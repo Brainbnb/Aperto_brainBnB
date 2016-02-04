@@ -113,6 +113,7 @@ li						{	display: block;	}
 							display		: block;		}
 
 /****** SECTION ELEMENT******/
+#nav					{	padding-top	: 8.2%;	}
 .container			 	{	background-color: #fefefe;
 							color			: #222222;
   							text-align		: left;
@@ -123,12 +124,13 @@ li						{	display: block;	}
  			 				margin			: 0 auto;	}
 
 .container th			{	padding-top		: 15px;
-							font-size		: 13px;	
 							font-weight		: 800;
 							margin-bottom	: 50px;
-							text-transform	: uppercase;}
+							text-transform	: uppercase;
+							font-size		: 18px;	
+							font-family		: ApertoAG Regular;}
 
-.container th::first-letter {	font-size: 17px;
+.container th::first-letter {	font-size: 21px;
     							color: #222222;		}
 
 #financialclm, 
@@ -139,16 +141,21 @@ li						{	display: block;	}
 
 #financialclmtd,
 #summaryclmtd			{	color		  : #A8A8A8;	
-							text-transform: uppercase;}
+							text-transform: uppercase;	
+							font-size		: 15px;	
+							font-family		: ApertoAG Medium;}
 
 #descriptiotexttd		{	width: 77.3%;	
 							padding-right: 34%;
 							text-align: justify;
-							padding-left: 35px;	}
+							padding-left: 35px;	
+							font-size		: 15px;	
+							font-family		: ApertoAG Regular;}
 
 .container td 			{	padding-top: 20px;	
 							padding-left: 40px;
-							font-size	  : 11px;	}
+							font-size		: 15px;	
+							font-family		: ApertoAG Regular;	}
 
 .container td:first-child, 
 .container th:first-child {	padding-left: 200px;	}
@@ -156,14 +163,15 @@ li						{	display: block;	}
 .container td:last-child, 
 .container th:last-child  {	padding-right: 100px;	}
 
-#scheduleclm,
-#scheduletd				{	padding-left: 212.3px;	}
+#scheduleclm	{	padding-left: 212.3px;	}
 
 #scheduletd				{	color		  : #A8A8A8;	
-							text-transform: uppercase;	}
+							text-transform: uppercase;
+							font-size		: 15px;	
+							font-family		: ApertoAG Medium;	}
 #scheduletd2			{	color			: #A8A8A8;
 							text-transform	: capitalize;
-							padding-left	: 212.3px;		}
+							padding-left	: 400px;		}
 							
 #graph-icon:hover		{ 	color : #9c0;
 							cursor: pointer;	}

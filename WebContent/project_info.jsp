@@ -56,7 +56,7 @@
 </div>
   
 <!-- PAGE -->
-<section class="container">
+<section class="container" style="padding-top: 1.8%">
 	<table class="order-table">
 		<thead>
 			<tr>
@@ -67,19 +67,15 @@
 		<tbody>
 			<tr>
 				<td id="summaryclmtd">project name		</td><td><%=currentProject.getProjectName()%></td>
-				<td id="financialclmtd">total planned cost	</td><td>€€€</td><td id="financialclmtd2"></td><td id="financialclmtd2">%</td>
+				<td id="financialclmtd">budget	</td><td>€€€</td><td id="financialclmtd2"></td><td id="financialclmtd2">%</td>
 			</tr>
 			<tr>
-				<td id="summaryclmtd">project manager	</td><td>Name Surname</td>
+				<td id="summaryclmtd">project manager</td><td>Name Surname</td>
+				<td id="financialclmtd">plan cost</td><td>€€€</td><td id="financialclmtd2"></td><td id="financialclmtd2">%</td>
+			</tr>
+			<tr>
+				<td id="summaryclmtd">					</td><td></td>
 				<td id="financialclmtd">actual cost		</td><td>€€€</td><td id="financialclmtd2"><i id="graph-icon" class="fa fa-bar-chart fa-2x"></i></td><td id="financialclmtd2">%</td>
-			</tr>
-			<tr>
-				<td id="summaryclmtd">last modification	</td><td>01.01.01</td>
-				<td id="financialclmtd">cost				</td><td>€€€</td><td id="financialclmtd2"></td><td id="financialclmtd2">%</td>
-			</tr>
-			 <tr>
-				<td id="summaryclmtd">			  	</td><td></td>
-				<td id="financialclmtd">extimated cost</td><td>€€€</td><td id="financialclmtd2"></td><td id="financialclmtd2">%</td>
 			</tr>
 		</tbody>
 	</table>
@@ -87,7 +83,7 @@
 		
 	</table>
 </section>
-<section class="container">
+<section class="container" style="padding-top: 1.5%">
 	<table class="order-table">
 	<tbody>
 			<tr>
@@ -96,25 +92,17 @@
 		</tbody>
 	</table>
 </section>
-<section class="container">
+<section class="container" style="padding-top: 1.8%; padding-bottom: 3%" >
 	<table class="order-table">
 		<thead>
 			<tr>
-				<th id="scheduleclm">schedule</th><th></th>
+				<th >schedule</th><th></th><th></th><th></th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr>
 				<td id="scheduletd">start date (real)</td><td><%=currentProject.getStartDate()%></td>
-				<td id="scheduletd">end date		 </td><td><%=currentProject.getEndDate() %></td>
-			</tr>
-			<tr>
-				<td></td><td></td>
-				<td id="scheduletd2">contracted</td><td>01.01.01</td>
-			</tr>
-			<tr>
-				<td></td><td></td>								  
-				<td id="scheduletd2">planned	</td><td>01.01.01</td>
+				<td id="scheduletd" style="padding-left	: 237px">end date (contracted)</td><td><%=currentProject.getEndDate() %></td>
 			</tr>
 			<tr>
 				<td></td><td></td>							  
