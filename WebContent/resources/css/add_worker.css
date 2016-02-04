@@ -68,7 +68,9 @@ hr 						{	margin-top: 30px;
   							-webkit-transition: width 0.1s;
 							-webkit-transition-timing-function: linear;
 							transition: width 0.1s;
-							transition-timing-function: linear;				}
+							transition-timing-function: linear;	
+							
+							padding-top: 8.1%;				}
 
 #side_menu:not(:hover)	{	background-color: #fefefe;
 						   	position		: fixed;
