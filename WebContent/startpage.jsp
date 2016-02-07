@@ -114,7 +114,7 @@
 						%>
 						<tr>
 							<td><a href="ProjectInfoServlet?id=<%=i%>" type="submit"><%=projectList.get(i).getProjectID()%></a></td>
-							<td><%=projectList.get(i).getProjectName()%></td>
+							<td><a href="ProjectInfoServlet?id=<%=i%>" type="submit"><%=projectList.get(i).getProjectName()%></a></td>
 							<td><%=projectList.get(i).getRole()%></td>
 							<td><%=projectList.get(i).getStartDate()%></td>
 <%-- 						<td><%=projectList.get(i).getEndDate()%></td>--%>						

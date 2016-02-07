@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" import="org.aperto.brainbnb.dto.Employee"
-	import="java.util.ArrayList" import="org.aperto.brainbnb.dto.User"%>
+	import="java.util.ArrayList" import="org.aperto.brainbnb.dto.User" import="org.aperto.brainbnb.dto.Project"%>
 
 <!DOCTYPE html>
 <html>
@@ -46,14 +46,15 @@
 	</header>
 
 	<div id="top">
-		<h2>01-Project</h2>
+	<%Project currentProject = (Project) session.getAttribute("currentProject"); %>
+		<h2><%=currentProject.getProjectName()%></h2>
 	</div>
 
 	<div id="nav">
 		<!-- SIDE MENU -->
 		<nav id="side_menu">
 			<ul class="container-fluid">
-				<li id="side_id"><a href="#info"><i
+				<li id="side_id"><a href="ProjectInfoServlet?id=<%=currentProject.getProjectID()-1%>"><i
 						class="fa fa-info fa-fw fa-2x"> </i>INFORMATION</a></li>
 				<li id="side_id"><a href="#"><i
 						class="fa fa-user fa-fw fa-2x"> </i>TEAM</a></li>
@@ -101,7 +102,7 @@
 						%>
 				<div class="team-member">
 					<img class="team-photo"	src="<%=employeeList.get(i).getPicturePath()%>">
-					<h3><%=employeeList.get(i).getName()%><%=employeeList.get(i).getSurName()%></h3>
+					<h3><%=employeeList.get(i).getName()%> <%=employeeList.get(i).getSurName()%></h3>
 					<span> <%=employeeList.get(i).getJobTitle()%> </span>
 					<div class="social">
       			<a><i class="fa fa-envelope-o" href="mailto:calafuri.silvia@gmail.com"></i></a>

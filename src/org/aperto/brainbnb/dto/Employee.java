@@ -11,7 +11,7 @@ public class Employee {
 	private boolean available;
 //	private HashMap<String, Integer> skills;
 	
-	public Employee(String name, String surName, String password, String jobTitle, String picturePath,
+	public Employee(String surName, String name, String password, String jobTitle, String picturePath,
 			boolean available) {
 		super();
 		this.name = name;
