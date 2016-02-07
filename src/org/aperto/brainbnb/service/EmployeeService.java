@@ -13,7 +13,7 @@ public class EmployeeService {
 			false);
 	Employee doha = new Employee("Akil", "Doha", "admin4", "Software-Engineering", "resources/img/User_Bild_1.png",
 			false);
-	Employee vera = new Employee("Nicolaisen", "Vera", "admin5", "Backend-Development", "resources/img/User_Bild_1.png",
+	Employee vera = new Employee("Nicolaisen", "Vera", "admin5", "Backend-Development", "resources/img/foto_Vera_Nicolaisen.jpg",
 			false);
 	Employee sophie = new Employee("Sontia", "Sophie", "admin6", "Sales Manager", "resources/img/User_Bild_1.png",
 			true);

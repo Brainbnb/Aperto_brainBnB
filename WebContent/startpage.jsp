@@ -29,7 +29,7 @@
 			<div>
 				<ul class= "nav navbar-nav navbar-right">
 						<% User user = (User) session.getAttribute("user"); %> 
-					<li class="user-images"> <img src= "resources/img/User_Bild_2.png" width="50px" height= "40px"/> </li>
+					<li class="user-images"> <img src= "<%=user.getPicturePath()%>" width="50px" height= "40px"/> </li>
 					<li> <a href= "#"> 
 					<%=user.getUserName()%>
 						 </a> </li>
