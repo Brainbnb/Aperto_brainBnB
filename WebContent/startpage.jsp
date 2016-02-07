@@ -77,14 +77,18 @@
 		<div class="material-button-anim">
   			<ul class="list-inline" id="options">
     			<li class="option">
+    			<a href="AddProjectServlet">
       				<button class="material-button option1" type="button">
         				<span class="fa fa-plus" aria-hidden="true"></span>
       				</button>
+      			</a>
     			</li>
     			<li class="option">
+    			<a href="StartPageGraphServlet">
       				<button class="material-button option2" type="button">
         				<span class="fa fa-bar-chart" aria-hidden="true"></span>
       				</button>
+      			</a>
     			</li>
     			<!-- <li class="option">
       				<button class="material-button option3" type="button">
