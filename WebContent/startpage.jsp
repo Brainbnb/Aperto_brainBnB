@@ -28,10 +28,10 @@
 			</div>
 			<div>
 				<ul class= "nav navbar-nav navbar-right">
+						<% User user = (User) session.getAttribute("user"); %> 
 					<li class="user-images"> <img src= "resources/img/User_Bild_2.png" width="50px" height= "40px"/> </li>
 					<li> <a href= "#"> 
-						 <% User user = (User) session.getAttribute("user");
-	 					 %> <%=user.getUserName()%>
+					<%=user.getUserName()%>
 						 </a> </li>
 					<li class="vertical-separator"> | </li>
 					<li> <a href="LogoutServlet">Log out </a> </li>
