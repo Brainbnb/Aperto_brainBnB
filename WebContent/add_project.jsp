@@ -49,7 +49,7 @@
 
 
 	<!-- PAGE -->
-	<section class="section_container">
+	<section class="section_container" style="padding-top: 8.2%">
 		<div class="container">
 		 	<form>
 		    	<h1>Do you want do add a Project?</h1>
