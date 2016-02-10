@@ -51,7 +51,8 @@
 	<!-- PAGE -->
 	<section class="section_container" style="padding-top: 8.2%">
 		<div class="container">
-		 	<form>
+		 	<form action="plan_project" method="post">
+      
 		    	<h1>Do you want do add a Project?</h1>
 		    		
 		    	<div class= "div_table">
@@ -59,7 +60,7 @@
 						<tbody>
 							<tr>
 								<td id= "theader"> 
-									<div class="form-group"><input type="text" required="required"/>
+									<div class="form-group"><input type="text" name="projectname" required="required"/>
 			      					<label for="input" class="control-label">Name</label><i class="bar"></i></div>
 								</td><td></td>
 								<td></td>
@@ -67,21 +68,21 @@
 							</tr>
 							<tr>
 								<td id= "theader"> 
-									<div class="form-group"><input type="text" required="required"/>
+									<div class="form-group"><input type="text" name="startdate" required="required"/>
 			      					<label for="input" class="control-label">Start date</label><i class="bar"></i></div>
 								</td><td></td>
 								<td id= "theader"> 
-									<div class="form-group"><input type="text" required="required"/>
+									<div class="form-group"><input type="text" name="budget" required="required"/>
 			      					<label for="input" class="control-label">Budget</label><i class="bar"></i></div>
 								</td>
 							</tr>
 							<tr>
 								<td id= "theader"> 
-									<div class="form-group"><input type="text" required="required"/>
+									<div class="form-group"><input type="text" name="enddate" required="required"/>
 			      					<label for="input" class="control-label">End date</label><i class="bar"></i></div>
 								</td><td></td>
 								<td id= "theader"> 
-									<div class="form-group"><input type="text" required="required"/>
+									<div class="form-group"><input type="text" name="plancost" required="required"/>
 			      					<label for="input" class="control-label">Plan cost</label><i class="bar"></i></div>
 								</td>
 							</tr>
@@ -95,6 +96,7 @@
 		    	<!-- FREIWILLIGE TEXT -->
 		    	<div class="form-group">
 		      		<textarea required="required"></textarea>
+		      		<input type="text" name="description"/>
 		      		<label for="textarea" class="control-label" id= "description_label">Description</label><i class="bar"></i>
 		    	</div>
 		    	

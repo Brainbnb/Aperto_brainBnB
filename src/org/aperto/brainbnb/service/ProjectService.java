@@ -8,18 +8,18 @@ public class ProjectService {
 	String startDate = "10/10/2015";
 	String endDate = "10/02/2016";
 	
-	Project one = new Project(1, "brainBnB", "Development of a project ressource planning tool for Aperto", "10/10/2015", "Developer", "10/02/2016");
-	Project two = new Project(2, "Creative Workline GmbH", "Development of ....", "10/10/2015", "Manager","10/02/2016");
-	Project three = new Project(3, "projectName", "description", startDate, "role", endDate);
-	Project four = new Project(4, "projectName", "description", startDate, "role", endDate);
-	Project five = new Project(5, "projectName", "description", startDate, "role", endDate);
-	Project six = new Project(6, "projectName", "description", startDate, "role", endDate);
-	Project seven = new Project(7, "projectName", "description", startDate, "role", endDate);
-	Project eight = new Project(8, "projectName", "description", startDate, "role", endDate);
-	Project nine = new Project(9, "projectName", "description", startDate, "role", endDate);
-	Project ten = new Project(10, "projectName", "description", startDate, "role", endDate);
+	Project one = new Project("brainBnB",  "10/10/2015", "20000", "20/10/2016", "15000", "Development of a project ressource planning tool for Aperto");
+	Project two = new Project("Creative Workline GmbH",  "10/10/2015", "20000", "20/10/2016", "15000", "Development of...");
+	Project three = new Project("projectName",  "10/10/2015", "20000", "20/10/2016", "15000", "Development of...");
+	Project four = new Project("projectName",  "10/10/2015", "20000", "20/10/2016", "15000", "Development of...");
+	Project five = new Project("projectName",  "10/10/2015", "20000", "20/10/2016", "15000", "Development of...");
+	Project six = new Project("projectName",  "10/10/2015", "20000", "20/10/2016", "15000", "Development of...");
+	Project seven = new Project("projectName",  "10/10/2015", "20000", "20/10/2016", "15000", "Development of...");
+	Project eight = new Project("projectName",  "10/10/2015", "20000", "20/10/2016", "15000", "Development of...");
+	Project nine = new Project("projectName",  "10/10/2015", "20000", "20/10/2016", "15000", "Development of...");
+	Project ten = new Project("projectName",  "10/10/2015", "20000", "20/10/2016", "15000", "Development of...");
 	
-	ArrayList<Project> projectList;
+	private ArrayList<Project> projectList;
 
 	public ArrayList<Project> generateProjectList(){
 		this.projectList = new ArrayList<Project>();
@@ -36,4 +36,9 @@ public class ProjectService {
 		
 		return this.projectList;
 	}
+	
+	public void addtoList(Project p){
+		this.projectList.add(p);
+	}
+
 }

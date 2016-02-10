@@ -25,7 +25,7 @@
 	<div class= "log-in">
 		<h1>WELCOME</h1>
  		<form action="login" method="post">
-        <p><input type="text" name="userID" placeholder="Username"></p>
+        <p><input type="text" name="user" placeholder="Username"></p>
         <p><input type="password" name="password" placeholder="Password"></p>
         <p class="remember_me">
         	<label>
@@ -33,7 +33,7 @@
         	</label>
         </p>
         <p >
-        <button class="loginButton" type="submit">Log In</button>
+        <button class="loginButton" type="submit" value="Login">Log In</button>
         </p>
       	</form>
     </div>

@@ -17,25 +17,34 @@ import org.aperto.brainbnb.service.LoginService;
 import org.aperto.brainbnb.service.ProjectService;
 
 /**
- * Servlet implementation class ShowEmployeeServlet
+ * Servlet implementation class PlanProjectServlet
  */
-@WebServlet("/ShowEmployeeServlet")
-public class ShowEmployeeServlet extends HttpServlet {
+@WebServlet("/plan_project")
+public class PlanProjectServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String projectname, startdate, budget, enddate, plancost, description;
+		
+		projectname = request.getParameter("projectname");
+		startdate = request.getParameter("startdate");
+		budget = request.getParameter("budget");
+		enddate = request.getParameter("enddate");
+		plancost = request.getParameter("plancost");
+		description = request.getParameter("description");
+		
+		
+		ProjectService projectService = new ProjectService();
+		Project newProject = new Project(projectname, startdate, budget, enddate, plancost, description);
+//		
+//		ArrayList<Project> projectListNew =;
+////		projectListNew.add(newProject);
+//		response.sendRedirect("startpage.jsp");
 
-//		name = request.getParameter("name");
-//
-//		
-//		LoginService loginService = new LoginService();
-//		ProjectService projectService = new ProjectService();
-//		EmployeeService employeeService = new EmployeeService();
-//		boolean result = loginService.authenticate(userID, password);
-//		
+		
 //		if (result){
 //			response.sendRedirect("startpage.jsp");
 //			User user = loginService.getUserDetails(userID);
@@ -44,19 +53,9 @@ public class ShowEmployeeServlet extends HttpServlet {
 //			request.getSession().setAttribute("user", user);
 //			request.getSession().setAttribute("projectList", projectListNew);
 //			request.getSession().setAttribute("employeeList", employeeListNew);
-////			request.setAttribute("projectList", projectListNew);
-//
-//			return;
-//			
-//			
-//			//response.sendRedirect(SERVLET); -- auch möglich
-//			
-//		}
-//		else{
-//			response.sendRedirect("login.jsp");
-//			return;
-//		}
-//		
-//	}
-
-	}}
+//			request.setAttribute("projectList", projectListNew);
+			
+			//response.sendRedirect(SERVLET); -- auch möglich
+	
+	}
+}

@@ -28,10 +28,10 @@
 			</div>
 			<div>
 				<ul class= "nav navbar-nav navbar-right">
-						<% User user = (User) session.getAttribute("user"); %> 
-					<li class="user-images"> <img src= "<%=user.getPicturePath()%>" width="50px" height= "40px"/> </li>
+						<%/*  User user = (User)  */session.getAttribute("user"); %> 
+					<li class="user-images"> <img src= "<%-- <%=user.getPicturePath()% --%>>" width="50px" height= "40px"/> </li>
 					<li> <a href= "#"> 
-					<%=user.getUserName()%>
+					<%=/* user.getUserName() */session.getAttribute("user")%>
 						 </a> </li>
 					<li class="vertical-separator"> | </li>
 					<li> <a href="LogoutServlet">Log out </a> </li>
@@ -110,18 +110,17 @@
 		            </th>
 		          </tr>
 		        </thead>
-		        <tbody>
+<%-- 		        <tbody>
 						<%
 							ArrayList<Project> projectList = (ArrayList<Project>) session.getAttribute("projectList");
 							if (projectList != null) {
 								for (int i = 0; i < projectList.size(); i++) {
 						%>
 						<tr>
-							<td><a href="ProjectInfoServlet?id=<%=i%>" type="submit"><%=projectList.get(i).getProjectID()%></a></td>
+							<td><a href="ProjectInfoServlet?id=<%=i%>" type="submit"><%=projectList.indexOf(i)%></a></td>
 							<td><a href="ProjectInfoServlet?id=<%=i%>" type="submit"><%=projectList.get(i).getProjectName()%></a></td>
-							<td><%=projectList.get(i).getRole()%></td>
 							<td><%=projectList.get(i).getStartDate()%></td>
-<%-- 						<td><%=projectList.get(i).getEndDate()%></td>--%>						
+						<td><%=projectList.get(i).getEndDate()%></td>						
 							<td>IN PROCESS</td>
 							<td><progress value="21" max="100"></progress> <!-- <div class="progress-bar"> <span style= "width:3%"></span> </div><p></p> --></td>
 					
@@ -131,7 +130,7 @@
 							}
 							}
 						%>
-					</tbody>
+					</tbody> --%>
 		      </table>
 		    </div>
 		  </div>
