@@ -9,8 +9,8 @@
 <title>Aperto | BrainBnB</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<link rel="stylesheet" href="resources/css/add_worker.css" type="text/css" />
-	<link rel='stylesheet' href="resources/font/ApertoAGReg" type='text/css'>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet prefetch" href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
 
 </head>
 <body>
@@ -63,7 +63,6 @@
 		</nav>
 	</div>
 
-
 	<!-- PAGE -->
 	<!--Pattern HTML-->
 	<section class="container">
@@ -83,19 +82,158 @@
 			</nav>
 		</div>
 		<!--End Pattern HTML-->
-		
-		<section class="addworker_container">
+		<section class="cf worker-container">
+			<p id="big_p">people</p> <p>(68)</p> 
+			<p id="big_p" style="padding-left: 2%">favourites</p> <p>(3)</p>
 			
-			<!-- FILTER -->
-			
-			<!-- PERSON FAVORITES -->
-			
-			<!-- TABELLE MITARBEITER -->
-			
+			<!-- FIRST TABLE -->
+			<table class="fixed" style="padding-left: 11.2%" id="worker-table">
+				<col width="250px" />
+				<col width="180px" />
+				<col width="120px" />
+    			<col width="180px" />
+    			<col width="350px" />
+				<tr>
+					<th></th>
+					<th>name</th>
+					<th>age</th>
+					<th>languages</th>
+					<th>skills</th>
+				</tr>
+				<tr>
+					<td>
+						<li><figure>
+							<img  class="avatar" src="resources/img/foto_ldc.jpg">
+						</figure>
+						</li>		
+						<label class="add-fav"><input type="checkbox" />
+  							<i class="icon-heart"></i>		
+						</label>		
+						<span><a id="add_btn"><i class="fa fa-plus-square"></i> add</a></span>
+					</td>
+					<td>Leonardo DiCaprio</td>
+					<td>41</td>
+					<td><li>German</li><li>English</li><li>Italian</li></td>
+					<!--****** GRAPH ******-->
+					<td><div id="resumeProficienciesTop">css3/css</div>
+						<div id="wrapper"><div class="star-rating"><span style="width:0%"></span></div>	</div>
+											
+					<div id="resumeProficienciesTop">jquery</div>
+						<div id="wrapper"><div class="star-rating"><span style="width:100%"></span></div>	</div>					
+						
+					<div id="resumeProficienciesTop">javascript</div>
+						<div id="wrapper"><div class="star-rating"><span style="width:80%"></span></div></div>						
+					
+					<div id="resumeProficienciesTop">bootstrap</div>
+						<div id="wrapper"><div class="star-rating"><span style="width:50%"></span></div></div>						
+						
+					<div id="resumeProficienciesTop">wordpress</div>
+						<div id="wrapper"><div class="star-rating"><span style="width:35%"></span></div>	</div>					
+					
+					<div id="resumeProficienciesTop">user interface</div>
+						<div id="wrapper"><div class="star-rating"><span style="width:90%"></span></div></div>						
+				</tr>
+			</table>
+			<hr></hr>
+			<!-- SECOND TABLE -->
+			<table class="fixed" style="padding-left: 11.2%" id="worker-table">
+				<col width="250px" />
+				<col width="180px" />
+				<col width="120px" />
+    			<col width="180px" />
+    			<col width="350px" />
+				<tr>
+					<th></th>
+					<th>name</th>
+					<th>age</th>
+					<th>languages</th>
+					<th>skills</th>
+				</tr>
+				<tr>
+					<td>
+						<li><figure>
+							<img  class="avatar" src="resources/img/foto_jd.png">
+						</figure>
+						</li>		
+						<label class="add-fav"><input type="checkbox" />
+  							<i class="icon-heart"></i>		
+						</label>		
+						<span><a id="add_btn"><i class="fa fa-plus-square"></i> add</a></span>
+					</td>
+					<td>Johnny Depp</td>
+					<td>52</td>
+					<td><li>English</li></td>
+					<!--****** GRAPH ******-->
+					<td><div id="resumeProficienciesTop">css3/css</div>
+						<div id="wrapper"><div class="star-rating"><span style="width:0%"></span></div>	</div>
+											
+					<div id="resumeProficienciesTop">jquery</div>
+						<div id="wrapper"><div class="star-rating"><span style="width:100%"></span></div>	</div>					
+						
+					<div id="resumeProficienciesTop">javascript</div>
+						<div id="wrapper"><div class="star-rating"><span style="width:80%"></span></div></div>						
+					
+					<div id="resumeProficienciesTop">bootstrap</div>
+						<div id="wrapper"><div class="star-rating"><span style="width:50%"></span></div></div>						
+						
+					<div id="resumeProficienciesTop">wordpress</div>
+						<div id="wrapper"><div class="star-rating"><span style="width:35%"></span></div>	</div>					
+					
+					<div id="resumeProficienciesTop">user interface</div>
+						<div id="wrapper"><div class="star-rating"><span style="width:90%"></span></div></div>						
+				</tr>
+			</table>
+			<hr></hr>
+			<!-- THIRD TABLE -->
+			<table class="fixed" style="padding-left: 11.2%" id="worker-table">
+				<col width="250px" />
+				<col width="180px" />
+				<col width="120px" />
+    			<col width="180px" />
+    			<col width="350px" />
+				<tr>
+					<th></th>
+					<th>name</th>
+					<th>age</th>
+					<th>languages</th>
+					<th>skills</th>
+				</tr>
+				<tr>
+					<td>
+						<li><figure>
+							<img  class="avatar" src="resources/img/foto_gc.jpg">
+						</figure>
+						</li>		
+						<label class="add-fav"><input type="checkbox" />
+  							<i class="icon-heart"></i>		
+						</label>		
+						<span><a id="add_btn"><i class="fa fa-plus-square"></i> add</a></span>
+					</td>
+					<td>George Clooney</td>
+					<td>54</td>
+					<td><li>German</li><li>English</li><li>Italian</li></td>
+					<!--****** GRAPH ******-->
+					<td><div id="resumeProficienciesTop">css3/css</div>
+						<div id="wrapper"><div class="star-rating"><span style="width:0%"></span></div>	</div>
+											
+					<div id="resumeProficienciesTop">jquery</div>
+						<div id="wrapper"><div class="star-rating"><span style="width:100%"></span></div>	</div>					
+						
+					<div id="resumeProficienciesTop">javascript</div>
+						<div id="wrapper"><div class="star-rating"><span style="width:80%"></span></div></div>						
+					
+					<div id="resumeProficienciesTop">bootstrap</div>
+						<div id="wrapper"><div class="star-rating"><span style="width:50%"></span></div></div>						
+						
+					<div id="resumeProficienciesTop">wordpress</div>
+						<div id="wrapper"><div class="star-rating"><span style="width:35%"></span></div>	</div>					
+					
+					<div id="resumeProficienciesTop">user interface</div>
+						<div id="wrapper"><div class="star-rating"><span style="width:90%"></span></div></div>						
+				</tr>
+			</table>
 			
 		</section>
-
 	</section>
-
 </body>
 </html>
