@@ -140,7 +140,7 @@ hr 						{	margin-top		: 1%;
 #intmenuicon			{ 	text-transform	: uppercase;
 							size			: 11px;
 							color			: #8d8b8e;
-							padding-top		: 10px;
+							padding-top		: 10.5px;
 							text-align		: center;
 							padding-left	: 8px;	}
 							
@@ -148,17 +148,21 @@ hr 						{	margin-top		: 1%;
 #intmenuicon:hover		{ 	text-transform: uppercase;
 							color		: #9c0;
 							text-decoration: none;
-							padding-top: 10px;
+							padding-top: 10.5px;
 							text-align: center;
 							padding-left: 8px;	}
+
+#intmenuicon a:hover	{	font-family: ApertoAG Medium;}	
+
+#intmenuicon a			{	font-family: ApertoAG Regular;
+							font-size: 15px;
+							letter-spacing: 1px}
 							
 li .fa-circle-o:hover:before{	content: "\f192";	}
 							
 .navigation 			{	padding			: 1em;
   							border-bottom	: solid 1px #8d8b8e;
-  							padding-left	: 100px;
-  			
-		}
+  							padding-left	: 100px;	}
 		select {
 			width: 100%;
 		}
@@ -167,9 +171,12 @@ li .fa-circle-o:hover:before{	content: "\f192";	}
 		}
 		.nav-list li {
 			float: left;
+			padding-right: 1.5%;
 			margin-right: 1em;
+			width: auto;
 			
 		}
+
 	
 .container th				{	font-size		: 18px;	
 								font-family		: ApertoAG Regular;
