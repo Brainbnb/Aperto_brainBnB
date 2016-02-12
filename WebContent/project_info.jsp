@@ -1,116 +1,188 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="java.util.ArrayList" import="org.aperto.brainbnb.dto.Project" import="org.aperto.brainbnb.dto.User"%>
+	pageEncoding="UTF-8" import="java.util.ArrayList"
+	import="org.aperto.brainbnb.dto.Project"
+	import="org.aperto.brainbnb.dto.User" import="java.sql.*"%>
 
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Aperto | BrainBnB</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<link rel="stylesheet" href="resources/css/project_info.css" type="text/css" />
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-	
+<title>Aperto | BrainBnB</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="resources/css/project_info.css"
+	type="text/css" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
 </head>
 <body>
+	<%
+//Verbindng zur Datenbank
+		try{
 
-<!-- NAVBAR -->
-<header>
-<nav class= "navbar navbar-inverse navbar-fixed-top" >
-	<div class= "container-fluid">
-		<div class= "navbar-header"> 
-		<a class="navbar-brand" href="#">
-			<img src= "resources/img/aperto-logo.svg" alt= "Aperto" align= "left" width= "114px" height= "21px" />	  </a>
-		</div>
-		<div>
-			<ul class= "nav navbar-nav navbar-right">
-				<li class="user-images"> <img src= "UserFoto%>" width="50px" height= "40px"/> </li>
-				<li> <a href= "#"> Username</a> </li>
-				<li class="vertical-separator"> | </li>
-				<li> <a href= "LogoutServlet"> Log out </a> </li>
-				<li class="vertical-separator"> | </li>
-				<li> <a href= "#"> EN </a> </li>	
+			//loading drivers for mysql
+			Class.forName("com.mysql.jdbc.Driver");
+
+			//creating connection with the database 
+			Connection con=DriverManager.getConnection
+			("jdbc:mysql://db.f4.htw-berlin.de:3306/_s0551133__BrainBnB", "s0551133", "brainbnb");
+		    Statement stmt = con.createStatement();%>
+
+	<!-- NAVBAR -->
+	<header>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#"> <img
+						src="resources/img/aperto-logo.svg" alt="Aperto" align="left"
+						width="114px" height="21px" />
+					</a>
+				</div>
+				<div>
+					<%
+				String user = (String)session.getAttribute("user"); 				
+				String sqlEmployee = "SELECT Firstname, Surname, PicturePath FROM Employees WHERE Firstname='"+user+"'";
+				ResultSet resEmployee = stmt.executeQuery(sqlEmployee);
+			    while(resEmployee.next()){
+				String firstname = resEmployee.getString(1);
+				String surname = resEmployee.getString(2);
+				String picturePath = resEmployee.getString(3);
+				System.out.println(picturePath);
+		 %>
+					<ul class="nav navbar-nav navbar-right">
+						<li class="user-images"><img src="<%=picturePath%>"
+							width="50px" height="40px" /></li>
+						<li><a href="#"> <%=firstname%> <%=surname%></a></li>
+						<li class="vertical-separator">|</li>
+						<li><a href="LogoutServlet"> Log out </a></li>
+						<li class="vertical-separator">|</li>
+						<li><a href="#"> EN </a></li>
+						<%} %>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<div id="top">
+
+		<h2>Projektname</h2>
+	</div>
+
+
+	<div id="nav">
+		<!-- SIDE MENU -->
+		<nav id="side_menu">
+			<ul class="container-fluid">
+				<li id="side_id"><a href="#info"><i
+						class="fa fa-info fa-fw fa-2x"> </i>INFORMATION</a></li>
+				<li id="side_id"><a href="ShowTeamServlet"><i
+						class="fa fa-user fa-fw fa-2x"> </i>TEAM</a></li>
+				<li id="side_id"><a href="#workflow"><i
+						class="fa fa-folder-open-o fa-fw fa-2x"></i>WORKFLOW </a></li>
+				<li id="side_id"><a href="#resource"><i
+						class="fa fa-archive fa-fw  fa-2x"> </i>RESOURCE </a></li>
+				<li id="side_id"><a href="#calendar"><i
+						class="fa fa-calendar-o fa-fw fa-2x"> </i>CALENDAR </a></li>
 			</ul>
-		</div>
-	</div>
-</nav>
-</header>
-
-<div id= "top">
-	
-	<h2>Projwctname</h2>
+		</nav>
 	</div>
 
+	<!-- PAGE -->
+	<section class="container" style="padding-top: 1.8%">
+		<table class="order-table">
+			<thead>
+				<tr>
+					<th id="summaryclm">summary</th>
+					<th></th>
+					<th id="financialclm">financial</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td id="summaryclmtd">project name</td>
+					<td>projectname</td>
+					<td id="financialclmtd">budget</td>
+					<td>€€€</td>
+					<td id="financialclmtd2"></td>
+					<td id="financialclmtd2">%</td>
+				</tr>
+				<tr>
+					<td id="summaryclmtd">project manager</td>
+					<td>name durname</td>
+					<td id="financialclmtd">plan cost</td>
+					<td>€€€</td>
+					<td id="financialclmtd2"></td>
+					<td id="financialclmtd2">%</td>
+				</tr>
+				<tr>
+					<td id="summaryclmtd"></td>
+					<td></td>
+					<td id="financialclmtd">actual cost</td>
+					<td>€€€</td>
+					<td id="financialclmtd2"><i id="graph-icon"
+						class="fa fa-bar-chart fa-2x"></i></td>
+					<td id="financialclmtd2">%</td>
+				</tr>
+			</tbody>
+		</table>
+		<table class="order-table">
 
-<div id="nav">
-<!-- SIDE MENU -->
-	<nav id="side_menu">
-  		<ul class="container-fluid">
-    		<li id="side_id"><a href="#info"		><i class="fa fa-info fa-fw fa-2x" >		</i>INFORMATION</a></li> 
-    		<li id="side_id"><a href="ShowTeamServlet"><i class="fa fa-user fa-fw fa-2x" >		</i>TEAM</a></li> 
- 			<li id="side_id"><a href="#workflow" 	><i class="fa fa-folder-open-o fa-fw fa-2x"></i>WORKFLOW   </a></li>
-  			<li id="side_id"><a href="#resource" 	><i class="fa fa-archive fa-fw  fa-2x">		</i>RESOURCE   </a></li>
-  			<li id="side_id"><a href="#calendar" 	><i class="fa fa-calendar-o fa-fw fa-2x">	</i>CALENDAR   </a></li>  
-  		</ul>
-  	</nav>
-</div>
-  
-<!-- PAGE -->
-<section class="container" style="padding-top: 1.8%">
-	<table class="order-table">
-		<thead>
-			<tr>
-				<th id="summaryclm">summary		</th><th></th>
-				<th id="financialclm">financial	</th><th></th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td id="summaryclmtd">project name		</td><td>Projectname</td>
-				<td id="financialclmtd">budget	</td><td>€€€</td><td id="financialclmtd2"></td><td id="financialclmtd2">%</td>
-			</tr>
-			<tr>
-				<td id="summaryclmtd">project manager</td><td>Name Surname</td>
-				<td id="financialclmtd">plan cost</td><td>€€€</td><td id="financialclmtd2"></td><td id="financialclmtd2">%</td>
-			</tr>
-			<tr>
-				<td id="summaryclmtd">					</td><td></td>
-				<td id="financialclmtd">actual cost		</td><td>€€€</td><td id="financialclmtd2"><i id="graph-icon" class="fa fa-bar-chart fa-2x"></i></td><td id="financialclmtd2">%</td>
-			</tr>
-		</tbody>
-	</table>
-	<table class="order-table">
-		
-	</table>
-</section>
-<section class="container" style="padding-top: 1.5%">
-	<table class="order-table">
-	<tbody>
-			<tr>
-				<td id="summaryclmtd" valign="top">description</td><td id="descriptiotexttd">Beschreibung</td>
-			</tr>
-		</tbody>
-	</table>
-</section>
-<section class="container" style="padding-top: 1.8%; padding-bottom: 3%" >
-	<table class="order-table">
-		<thead>
-			<tr>
-				<th >schedule</th><th></th><th></th><th></th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td id="scheduletd">start date (real)</td><td>Startdate</td>
-				<td id="scheduletd" style="padding-left	: 237px">end date (contracted)</td><td>Enddate</td>
-			</tr>
-			<tr>
-				<td></td><td></td>							  
-				<td id="scheduletd2">real		</td><td>01.01.01</td>
-			</tr>
-		</tbody>
-	
-	</table>
-</section>
+		</table>
+	</section>
+	<section class="container" style="padding-top: 1.5%">
+		<table class="order-table">
+			<tbody>
+				<tr>
+					<td id="summaryclmtd" valign="top">description</td>
+					<td id="descriptiotexttd">Beschreibung</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+	<section class="container"
+		style="padding-top: 1.8%; padding-bottom: 3%">
+		<table class="order-table">
+			<thead>
+				<tr>
+					<th>schedule</th>
+					<th></th>
+					<th></th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td id="scheduletd">start date (real)</td>
+					<td>Startdate</td>
+					<td id="scheduletd" style="padding-left: 237px">end date
+						(contracted)</td>
+					<td>Enddate</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td id="scheduletd2">real</td>
+					<td>01.01.01</td>
+				</tr>
+			</tbody>
+
+		</table>
+		<% 
+			con.close();
+					}
+				catch(ClassNotFoundException err){
+				out.println("DB-Driver nicht gefunden");
+				out.println(err);
+				}
+				catch(SQLException err){
+				out.println("Connect nicht möglich");
+				out.println(err);
+				}
+				%>
+	</section>
 
 
 </body>

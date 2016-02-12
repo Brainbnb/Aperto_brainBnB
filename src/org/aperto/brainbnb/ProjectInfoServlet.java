@@ -41,6 +41,7 @@ public class ProjectInfoServlet extends HttpServlet {
 		currentIndexInt = Integer.parseInt(currentIndexString);
 		System.out.println(currentIndexInt);
 		response.getWriter().append("Served at: ").append(request.getContextPath());
+		request.getSession().setAttribute("currentIndex", currentIndexInt);
 		response.sendRedirect("project_info.jsp");
 //		ProjectService projectService = new ProjectService();
 //		ArrayList<Project> projectListNew = projectService.generateProjectList();
