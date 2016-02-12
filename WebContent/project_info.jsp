@@ -64,10 +64,24 @@
 			</div>
 		</nav>
 	</header>
-
+		<%
+	
+	int id = (int)session.getAttribute("currentIndex");
+	System.out.println("ID: "+id);
+	String sqlProject = "SELECT p.name, e.firstname , e.surname, p.budget, p.plancost, p.description, p.startdate, p.enddate FROM Projects p, Employees e WHERE p.project_id='"+id+"' AND p.projectmanager=e.employee_id";
+	ResultSet resProject = stmt.executeQuery(sqlProject);
+    while(resProject.next()){
+	String projectName = resProject.getString(1); 
+	String employeeFirstName = resProject.getString(2);
+	String employeeLastName = resProject.getString(3);
+	String budget = resProject.getString(4);
+	String planCost = resProject.getString(5);
+	String description = resProject.getString(6);
+	String startDate = resProject.getString(7);
+	String endDate = resProject.getString(8);%>
 	<div id="top">
 
-		<h2>Projektname</h2>
+		<h2><%=projectName %></h2>
 	</div>
 
 
@@ -90,7 +104,9 @@
 	</div>
 
 	<!-- PAGE -->
+
 	<section class="container" style="padding-top: 1.8%">
+
 		<table class="order-table">
 			<thead>
 				<tr>
@@ -103,17 +119,17 @@
 			<tbody>
 				<tr>
 					<td id="summaryclmtd">project name</td>
-					<td>projectname</td>
+					<td><%=projectName%></td>
 					<td id="financialclmtd">budget</td>
-					<td>€€€</td>
+					<td><%=budget%> €</td>
 					<td id="financialclmtd2"></td>
 					<td id="financialclmtd2">%</td>
 				</tr>
 				<tr>
 					<td id="summaryclmtd">project manager</td>
-					<td>name durname</td>
+					<td><%=employeeFirstName%> <%=employeeLastName%></td>
 					<td id="financialclmtd">plan cost</td>
-					<td>€€€</td>
+					<td><%=planCost %> €</td>
 					<td id="financialclmtd2"></td>
 					<td id="financialclmtd2">%</td>
 				</tr>
@@ -131,13 +147,14 @@
 		<table class="order-table">
 
 		</table>
+
 	</section>
 	<section class="container" style="padding-top: 1.5%">
 		<table class="order-table">
 			<tbody>
 				<tr>
 					<td id="summaryclmtd" valign="top">description</td>
-					<td id="descriptiotexttd">Beschreibung</td>
+					<td id="descriptiotexttd"><%=description %></td>
 				</tr>
 			</tbody>
 		</table>
@@ -156,10 +173,10 @@
 			<tbody>
 				<tr>
 					<td id="scheduletd">start date (real)</td>
-					<td>Startdate</td>
+					<td><%=startDate %></td>
 					<td id="scheduletd" style="padding-left: 237px">end date
 						(contracted)</td>
-					<td>Enddate</td>
+					<td><%=endDate %></td>
 				</tr>
 				<tr>
 					<td></td>
@@ -168,7 +185,7 @@
 					<td>01.01.01</td>
 				</tr>
 			</tbody>
-
+		<%} %>
 		</table>
 		<% 
 			con.close();
