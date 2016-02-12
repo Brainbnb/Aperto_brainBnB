@@ -23,9 +23,8 @@
 		</div>
 		<div>
 			<ul class= "nav navbar-nav navbar-right">
-			<% User user = (User) session.getAttribute("user"); %>
-				<li class="user-images"> <img src= "<%=user.getPicturePath()%>" width="50px" height= "40px"/> </li>
-				<li> <a href= "#"> <%=user.getUserName()%></a> </li>
+				<li class="user-images"> <img src= "UserFoto%>" width="50px" height= "40px"/> </li>
+				<li> <a href= "#"> Username</a> </li>
 				<li class="vertical-separator"> | </li>
 				<li> <a href= "LogoutServlet"> Log out </a> </li>
 				<li class="vertical-separator"> | </li>
@@ -37,8 +36,8 @@
 </header>
 
 <div id= "top">
-	<%Project currentProject = (Project) session.getAttribute("currentProject"); %>
-	<h2><%=currentProject.getProjectName()%></h2>
+	
+	<h2>Projwctname</h2>
 	</div>
 
 
@@ -66,7 +65,7 @@
 		</thead>
 		<tbody>
 			<tr>
-				<td id="summaryclmtd">project name		</td><td><%=currentProject.getProjectName()%></td>
+				<td id="summaryclmtd">project name		</td><td>Projectname</td>
 				<td id="financialclmtd">budget	</td><td>€€€</td><td id="financialclmtd2"></td><td id="financialclmtd2">%</td>
 			</tr>
 			<tr>
@@ -87,7 +86,7 @@
 	<table class="order-table">
 	<tbody>
 			<tr>
-				<td id="summaryclmtd" valign="top">description</td><td id="descriptiotexttd"><%=currentProject.getDescription()%></td>
+				<td id="summaryclmtd" valign="top">description</td><td id="descriptiotexttd">Beschreibung</td>
 			</tr>
 		</tbody>
 	</table>
@@ -101,8 +100,8 @@
 		</thead>
 		<tbody>
 			<tr>
-				<td id="scheduletd">start date (real)</td><td><%=currentProject.getStartDate()%></td>
-				<td id="scheduletd" style="padding-left	: 237px">end date (contracted)</td><td><%=currentProject.getEndDate() %></td>
+				<td id="scheduletd">start date (real)</td><td>Startdate</td>
+				<td id="scheduletd" style="padding-left	: 237px">end date (contracted)</td><td>Enddate</td>
 			</tr>
 			<tr>
 				<td></td><td></td>							  
