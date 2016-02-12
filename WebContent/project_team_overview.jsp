@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" import="org.aperto.brainbnb.dto.Employee"
-	import="java.util.ArrayList" import="org.aperto.brainbnb.dto.User" import="org.aperto.brainbnb.dto.Project"%>
+	import="java.util.ArrayList" import="org.aperto.brainbnb.dto.User" import="org.aperto.brainbnb.dto.Project" import="java.sql.*"%>
 
 <!DOCTYPE html>
 <html>
@@ -17,6 +17,18 @@
 
 </head>
 <body>
+<%
+int id = (int)session.getAttribute("currentIndex");
+//Verbindng zur Datenbank
+		try{
+
+			//loading drivers for mysql
+			Class.forName("com.mysql.jdbc.Driver");
+
+			//creating connection with the database 
+			Connection con=DriverManager.getConnection
+			("jdbc:mysql://db.f4.htw-berlin.de:3306/_s0551133__BrainBnB", "s0551133", "brainbnb");
+		    Statement stmt = con.createStatement();%>
 	<!-- NAVBAR -->
 	<header>
 		<nav class="navbar navbar-inverse navbar-fixed-top">
@@ -28,16 +40,26 @@
 					</a>
 				</div>
 				<div>
+				<%
+				String user = (String)session.getAttribute("user"); 				
+				String sqlEmployee = "SELECT Firstname, Surname, PicturePath FROM Employees WHERE Firstname='"+user+"'";
+				ResultSet resEmployee = stmt.executeQuery(sqlEmployee);
+			    while(resEmployee.next()){
+				String firstname = resEmployee.getString(1);
+				String surname = resEmployee.getString(2);
+				String picturePath = resEmployee.getString(3);
+				System.out.println(picturePath);
+		 %>
 					<ul class="nav navbar-nav navbar-right">
-					<% User user = (User) session.getAttribute("user");%>
 						<li class="user-images"><img
-							src="<%=user.getPicturePath()%>" width="50px" height="40px" />
+							src="<%=picturePath%>" width="50px" height="40px" />
 						</li>
-						<li><a href="#"> <%=user.getUserName()%></a></li>
+						<li><a href="#"> <%=firstname%> <%=surname %></a></li>
 						<li class="vertical-separator">|</li>
 						<li><a href="LogoutServlet"> Log out </a></li>
 						<li class="vertical-separator">|</li>
 						<li><a href="#"> EN </a></li>
+						<%} %>
 					</ul>
 				</div>
 			</div>
@@ -45,15 +67,21 @@
 	</header>
 
 	<div id="top">
-	<%Project currentProject = (Project) session.getAttribute("currentProject"); %>
-		<h2><%=currentProject.getProjectName()%></h2>
+	<%
+	
+	String sqlProjects = "SELECT name FROM Projects WHERE project_id='"+id+"'";
+	ResultSet resProjects = stmt.executeQuery(sqlProjects);
+    while(resProjects.next()){
+	String projectname = resProjects.getString(1); 
+	System.out.println("Project: "+projectname);%>
+		<h2><%=projectname%></h2>
 	</div>
 
 	<div id="nav">
 		<!-- SIDE MENU -->
 		<nav id="side_menu">
 			<ul class="container-fluid">
-				<li id="side_id"><a href="ProjectInfoServlet?id=<%=currentProject.getProjectID()-1%>"><i
+				<li id="side_id"><a href="ProjectInfoServlet?id=<%=id%>"><i
 						class="fa fa-info fa-fw fa-2x"> </i>INFORMATION</a></li>
 				<li id="side_id"><a href="#"><i
 						class="fa fa-user fa-fw fa-2x"> </i>TEAM</a></li>
@@ -65,6 +93,7 @@
 						class="fa fa-calendar-o fa-fw fa-2x"> </i>CALENDAR </a></li>
 			</ul>
 		</nav>
+		<%} %>
 	</div>
 
 
@@ -90,19 +119,20 @@
 		<section class="cf team-container">
 			<h1 class="team-h1">Meet the Team</h1>
 			<div id="team">
-				
-
-
 				<%
-							ArrayList<Employee> employeeList = (ArrayList<Employee>) session.getAttribute("employeeList");
-							if (employeeList != null) {
-								System.out.println("hallo");
-								for (int i = 0; i < employeeList.size(); i++) {
-						%>
+				String sqlWorker = "SELECT e.firstname, e.surname, e.picturePath, e.jobtitle FROM Employees e, Projects p, work_for w WHERE p.project_id=w.project_id AND e.employee_id=w.employee_id AND p.project_ID='"+id+"'";
+				ResultSet resWorker = stmt.executeQuery(sqlWorker);
+			    while(resWorker.next()){
+				String firstname = resWorker.getString(1);
+				String surname = resWorker.getString(2);
+				String picturePath = resWorker.getString(3);
+				String jobTitel = resWorker.getString(4);
+				System.out.println("Worker: "+firstname);%>
+							
 				<div class="team-member">
-					<img class="team-photo"	src="<%=employeeList.get(i).getPicturePath()%>">
-					<h3><%=employeeList.get(i).getName()%> <%=employeeList.get(i).getSurName()%></h3>
-					<span> <%=employeeList.get(i).getJobTitle()%> </span>
+					<img class="team-photo"	src="<%=picturePath%>">
+					<h3><%=firstname%> <%=surname%></h3>
+					<span> <%=jobTitel%> </span>
 					<div class="social">
       			<a><i class="fa fa-envelope-o" href="mailto:calafuri.silvia@gmail.com"></i></a>
       			<a><i class="fa fa-phone" href="#"></i></a>
@@ -111,15 +141,24 @@
       			<a><i class="fa fa-twitter" href="#"></i></a>
     		</div>
 				</div>
-				<%
-							}
-							}
-						%>
+
 		</div>
+		<%} %>
 		</section>
 
 		<script src='//codepen.io/assets/editor/live/css_live_reload_init.js'></script>
 	</section>
-
+		<% 
+			con.close();
+					}
+				catch(ClassNotFoundException err){
+				out.println("DB-Driver nicht gefunden");
+				out.println(err);
+				}
+				catch(SQLException err){
+				out.println("Connect nicht möglich");
+				out.println(err);
+				}
+				%>
 </body>
 </html>
