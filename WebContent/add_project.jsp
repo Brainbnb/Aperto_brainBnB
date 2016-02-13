@@ -73,7 +73,7 @@
 	<!-- PAGE -->
 	<section class="section_container" style="padding-top: 8.2%">
 		<div class="container">
-		 	<form action="plan_project" method="post">
+		 	<form action="add_project" method="post">
       
 		    	<h1>Do you want do add a Project?</h1>
 		    		
