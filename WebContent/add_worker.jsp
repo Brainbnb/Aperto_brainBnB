@@ -127,10 +127,12 @@
 				</tr>
 				<tr>
 					<td>
+					 <ul>
 						<li><figure>
 							<img  class="avatar" src="resources/img/foto_ldc.jpg">
 						</figure>
-						</li>		
+						</li>
+					 </ul>		
 						<label class="add-fav"><input type="checkbox" />
   							<i class="icon-heart"></i>		
 						</label>		
@@ -138,7 +140,7 @@
 					</td>
 					<td>Leonardo DiCaprio</td>
 					<td>41</td>
-					<td><li>German</li><li>English</li><li>Italian</li></td>
+					<td><ul><li>German</li><li>English</li><li>Italian</li></ul></td>
 					<!--****** GRAPH ******-->
 					<td><div id="resumeProficienciesTop">css3/css</div>
 						<div id="wrapper"><div class="star-rating"><span style="width:0%"></span></div>	</div>
@@ -159,7 +161,9 @@
 						<div id="wrapper"><div class="star-rating"><span style="width:90%"></span></div></div>						
 				</tr>
 			</table>
+			
 			<hr></hr>
+			
 			<!-- SECOND TABLE -->
 			<table class="fixed" style="padding-left: 11.2%" id="worker-table">
 				<col width="250px" />
@@ -176,10 +180,12 @@
 				</tr>
 				<tr>
 					<td>
+					 <ul>
 						<li><figure>
 							<img  class="avatar" src="resources/img/foto_jd.png">
 						</figure>
-						</li>		
+						</li>	
+					 </ul>	
 						<label class="add-fav"><input type="checkbox" />
   							<i class="icon-heart"></i>		
 						</label>		
@@ -187,7 +193,7 @@
 					</td>
 					<td>Johnny Depp</td>
 					<td>52</td>
-					<td><li>English</li></td>
+					<td><ul><li>English</li></ul></td>
 					<!--****** GRAPH ******-->
 					<td><div id="resumeProficienciesTop">css3/css</div>
 						<div id="wrapper"><div class="star-rating"><span style="width:0%"></span></div>	</div>
@@ -225,10 +231,12 @@
 				</tr>
 				<tr>
 					<td>
+					 <ul>
 						<li><figure>
 							<img  class="avatar" src="resources/img/foto_gc.jpg">
 						</figure>
-						</li>		
+						</li>	
+					 </ul>	
 						<label class="add-fav"><input type="checkbox" />
   							<i class="icon-heart"></i>		
 						</label>		
@@ -236,7 +244,7 @@
 					</td>
 					<td>George Clooney</td>
 					<td>54</td>
-					<td><li>German</li><li>English</li><li>Italian</li></td>
+					<td><ul><li>German</li><li>English</li><li>Italian</li></ul></td>
 					<!--****** GRAPH ******-->
 					<td><div id="resumeProficienciesTop">css3/css</div>
 						<div id="wrapper"><div class="star-rating"><span style="width:0%"></span></div>	</div>
