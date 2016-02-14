@@ -192,32 +192,34 @@ li .fa-circle-o:hover:before{	content: "\f192";	}
 		}
 
 	
-.container th				{	font-size		: 18px;	
+.container th				{	font-size		: 16px;	
 								font-family		: ApertoAG Regular;
 								margin-bottom	: 50px;
 								text-transform	: uppercase;	
 								width			: 5%;}			
-.container th::first-letter {	font-size		: 21px;
+.container th::first-letter {	font-size		: 19px;
 								font-family		: ApertoAG Regular;
     							color			: #222222;		}
 
-#currenttaskclmtd2			{	padding-right: 2%;	}
+#currenttaskclmtd2			{	padding-right: 2%;	 }
 
-#personalinfoclmtd			{	padding-left: 4%;		}
+#personalinfoclmtd			{	padding-left: 4%;		
+								text-transform: uppercase;}
 
-#currenttaskclmtd			{	padding-left: 3%;	}
+#currenttaskclmtd			{	padding-left: 3%;	
+								text-transform: uppercase;	}
 #currenttaskclmtd,
 #personalinfoclmtd			{	color		  	: #A8A8A8;	
 								font-family		: ApertoAG Medium;
 								font-size		: 15px;
-								text-transform: uppercase;
+								text-transform: uppecase;
 								vertical-align: top;	}
 #personalinfoclmtd2			{	vertical-align: top;	}
 
 
 .container td 				{	padding-top	: 3%;	
 								font-family	: ApertoAG Regular;
-								font-size	: 16px;		}
+								font-size	: 15px;		}
 
 .container td:last-child, 
 .container th:last-child  	{	padding-left: 1%;	}
@@ -249,13 +251,13 @@ li .fa-circle-o:hover:before{	content: "\f192";	}
 .pieChart--detail--divider 			{	stroke: #A8A8A8;
   										stroke-width: 0.5;	}
   									
-.pieChart--detail--percentage 		{	font-size	: 17px;
+.pieChart--detail--percentage 		{	font-size	: 15px;
   										font-weight	: 400;
   										fill		: #333;	}
 
 .pieChart--detail--textContainer 	{	background-color: transparent;
 										color			: #A8A8A8;
-										font-size		: 17px;
+										font-size		: 15px;
   										font-style		: italic;		}
   										
 .pieChart--detail__left			 	{	text-align: left;	}
@@ -276,53 +278,47 @@ li .fa-circle-o:hover:before{	content: "\f192";	}
 								margin		: -3px 0px 0px 0px;
 								font-weight	: 700; }
 								
-.star-rating {
-  height: 30px;
-  position: relative;
-  width: 100px;
-}
-.star-rating:before {
-  background-image: url(data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22929%22%20height%3D%22886%22%20viewBox%3D%220%200%20929%20886%22%3E%3Cstyle%3Epath%20%7B%20fill%3A%20%23082532%20!important%20%7D%3C%2Fstyle%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M929%20343c0%208-5%2017-15%2027L711%20567l48%20279c1%203%201%207%201%2012%200%2015-8%2027-22%2027-7%201-15-1-23-6L464%20747%20214%20879c-9%205-16%207-23%207-14%200-23-15-23-28%200-3%200-7%201-12l48-279L14%20370c-9-10-14-19-14-27%200-14%2010-23%2031-26l280-40L437%2023c7-15%2016-23%2027-23s20%208%2028%2023l125%20254%20280%2040c21%203%2032%2012%2032%2026z%22%2F%3E%3C%2Fsvg%3E) !important;
-  background-repeat: repeat-x;
-  background-size: 20px;
-  bottom: 0;
-  content: "";
-  display: block;
-  height: 50px;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 100px;
-}
-.star-rating > span {
-  display: block;
-  text-indent: -10000px;
-  width: 150px;
-  height: 50px;
-  position: absolute;
-  overflow: hidden;
-}
+.star-rating {	height: 26px;
+			 	position: relative;
+			  	width: 100px;		}
+			  	
+.star-rating:before { background-image: url(data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22929%22%20height%3D%22886%22%20viewBox%3D%220%200%20929%20886%22%3E%3Cstyle%3Epath%20%7B%20fill%3A%20%23082532%20!important%20%7D%3C%2Fstyle%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M929%20343c0%208-5%2017-15%2027L711%20567l48%20279c1%203%201%207%201%2012%200%2015-8%2027-22%2027-7%201-15-1-23-6L464%20747%20214%20879c-9%205-16%207-23%207-14%200-23-15-23-28%200-3%200-7%201-12l48-279L14%20370c-9-10-14-19-14-27%200-14%2010-23%2031-26l280-40L437%2023c7-15%2016-23%2027-23s20%208%2028%2023l125%20254%20280%2040c21%203%2032%2012%2032%2026z%22%2F%3E%3C%2Fsvg%3E) !important;
+					  background-repeat: repeat-x;
+					  background-size: 20px;
+					  bottom: 0;
+					  content: "";
+					  display: block;
+					  height: 50px;
+					  left: 0;
+					  position: absolute;
+					  right: 0;
+					  top: 0;
+					  width: 100px;	}
+					  
+.star-rating > span { display: block;
+					  text-indent: -10000px;
+					  width: 150px;
+					  height: 50px;
+					  position: absolute;
+					  overflow: hidden; }
 
-.star-rating > span:before {
-  background-image: url(data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22929%22%20height%3D%22886%22%20viewBox%3D%220%200%20929%20886%22%3E%3Cstyle%3Epath%20%7B%20fill%3A%20%2399cc00%20!important%20%7D%3C%2Fstyle%3E%3Cpath%20fill%3D%22%23000000%22%20d%3D%22M929%20343c0%208-5%2017-15%2027L711%20567l48%20279c1%203%201%207%201%2012%200%2015-8%2027-22%2027-7%201-15-1-23-6L464%20747%20214%20879c-9%205-16%207-23%207-14%200-23-15-23-28%200-3%200-7%201-12l48-279L14%20370c-9-10-14-19-14-27%200-14%2010-23%2031-26l280-40L437%2023c7-15%2016-23%2027-23s20%208%2028%2023l125%20254%20280%2040c21%203%2032%2012%2032%2026z%22%2F%3E%3C%2Fsvg%3E) !important;
-  background-repeat: repeat-x;
-  background-size: 20px;
-  bottom: 0;
-  content: "";
-  display: block;
-  height: 50px;
-  left: 0;
-  position: absolute;
-  right: 0;
-  text-indent: 10000px;
-  top: 0;
-}
+.star-rating > span:before {  background-image: url(data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22929%22%20height%3D%22886%22%20viewBox%3D%220%200%20929%20886%22%3E%3Cstyle%3Epath%20%7B%20fill%3A%20%2399cc00%20!important%20%7D%3C%2Fstyle%3E%3Cpath%20fill%3D%22%23000000%22%20d%3D%22M929%20343c0%208-5%2017-15%2027L711%20567l48%20279c1%203%201%207%201%2012%200%2015-8%2027-22%2027-7%201-15-1-23-6L464%20747%20214%20879c-9%205-16%207-23%207-14%200-23-15-23-28%200-3%200-7%201-12l48-279L14%20370c-9-10-14-19-14-27%200-14%2010-23%2031-26l280-40L437%2023c7-15%2016-23%2027-23s20%208%2028%2023l125%20254%20280%2040c21%203%2032%2012%2032%2026z%22%2F%3E%3C%2Fsvg%3E) !important;
+							  background-repeat: repeat-x;
+							  background-size: 20px;
+							  bottom: 0;
+							  content: "";
+							  display: block;
+							  height: 50px;
+							  left: 0;
+							  position: absolute;
+							  right: 0;
+							  text-indent: 10000px;
+							  top: 0;	}
 
 body #wrapper 		{	text-align	: center;
   						margin		: 0 auto;
   						margin-bottom: 1.7rem;
-  						padding-left: 60%;
+  						padding-left: 85%;
   						vertical-align: top;}
 
 
