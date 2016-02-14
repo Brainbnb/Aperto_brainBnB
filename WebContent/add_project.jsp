@@ -10,11 +10,9 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<link rel="stylesheet" href="resources/css/add_project.css" type="text/css" />
 	<link rel='stylesheet' href="resources/font/ApertoAGReg" type='text/css'>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
-
-					
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">			
 </head>
+
 <body>
 <% //Verbindng zur Datenbank
 		try{
@@ -117,7 +115,6 @@
 		    	<!-- FREIWILLIGE TEXT -->
 		    	<div class="form-group">
 		      		<textarea required="required"></textarea>
-		      		<input type="text" name="description"/>
 		      		<label for="textarea" class="control-label" id= "description_label">Description</label><i class="bar"></i>
 		    	</div>
 		    	
