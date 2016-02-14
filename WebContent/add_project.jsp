@@ -62,7 +62,10 @@
 	</header>
 
 	<div id="top">
-		<h2>Add Project</h2>
+		<h2>Add Project
+		<a  class="btn_home" href="#">
+  			<i class="fa fa-home fa-2x"></i></a>
+  		</h2>
 	</div>
 
 

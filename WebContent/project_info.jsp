@@ -79,12 +79,14 @@
 	String description = resProject.getString(6);
 	String startDate = resProject.getString(7);
 	String endDate = resProject.getString(8);%>
+	
 	<div id="top">
-
-		<h2><%=projectName %></h2>
+		<h2><%=projectName %>
+		<a  class="btn_home" href="#">
+  			<i class="fa fa-home fa-2x"></i></a>
+  		</h2>
 	</div>
-
-
+	
 	<div id="nav">
 		<!-- SIDE MENU -->
 		<nav id="side_menu">

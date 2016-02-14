@@ -74,7 +74,10 @@ int id = (int)session.getAttribute("currentIndex");
     while(resProjects.next()){
 	String projectname = resProjects.getString(1); 
 	System.out.println("Project: "+projectname);%>
-		<h2><%=projectname%></h2>
+		<h2><%=projectname%>
+		<a  class="btn_home" href="#">
+  			<i class="fa fa-home fa-2x"></i></a>
+  		</h2>
 	</div>
 
 	<div id="nav">

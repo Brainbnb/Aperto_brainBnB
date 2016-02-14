@@ -42,9 +42,11 @@ li						{	display: block;	}
   							height	:17%;
   							background-color: #222;	}
   							
-#top h2 				{	padding-top	: 3.3%;
-							padding-left: 1%;
-							font-size	: 25px;}
+#top h2 				{	font-family: ApertoAG Medium;
+							padding-top	: 3.3%;
+							padding-left: 1.3%;
+							font-size	: 25px;
+							cursor		: default;	}
 							
 #section				{	background-color: #fefefe;
 							color			: #222222;
@@ -56,6 +58,19 @@ li						{	display: block;	}
 hr 						{	margin-top: 30px; 
 							border-top: 1px solid #dddddd;
 							width: 75%;}			
+							
+/****** HOME BUTTON ******/
+
+.btn_home		{ float	   : right; 
+				  font-size: 15px;
+				  padding-right: 3%;}   
+				  
+.fa-home 		{ color	  : #fefefe;	
+				  border  :none;
+	    		  overflow:hidden; }
+
+.fa-home:hover 	{ color: #9c0;	}
+
 							
 /****** SIDE MENU & SIDE MENU ELEMENT******/
 #side_menu				{	background-color: #222222;
