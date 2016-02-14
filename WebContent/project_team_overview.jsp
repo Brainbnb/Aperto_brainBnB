@@ -134,16 +134,16 @@ int id = (int)session.getAttribute("currentIndex");
 					<h3><%=firstname%> <%=surname%></h3>
 					<span> <%=jobTitel%> </span>
 					<div class="social">
-      			<a><i class="fa fa-envelope-o" href="mailto:calafuri.silvia@gmail.com"></i></a>
-      			<a><i class="fa fa-phone" href="#"></i></a>
-      			<a><i class="fa fa-facebook" href="#"></i></a>
-      			<a><i class="fa fa-linkedin" href="#"></i></a>
-      			<a><i class="fa fa-twitter" href="#"></i></a>
-    		</div>
+		      			<a><i class="fa fa-envelope-o"></i></a>
+		      			<a><i class="fa fa-phone" href="#"></i></a>
+		      			<a><i class="fa fa-facebook" href="#"></i></a>
+		      			<a><i class="fa fa-linkedin" href="#"></i></a>
+		      			<a><i class="fa fa-twitter" href="#"></i></a>
+    				</div>
 				</div>
-
-		</div>
-		<%} %>
+				<%} %>
+			</div>
+		
 		</section>
 
 		<script src='//codepen.io/assets/editor/live/css_live_reload_init.js'></script>
