@@ -24,10 +24,8 @@
 <body>
 	<% //Verbindng zur Datenbank
 		try{
-
 			//loading drivers for mysql
 			Class.forName("com.mysql.jdbc.Driver");
-
 			//creating connection with the database 
 			Connection con=DriverManager.getConnection
 			("jdbc:mysql://db.f4.htw-berlin.de:3306/_s0551133__BrainBnB", "s0551133", "brainbnb");
@@ -106,7 +104,7 @@
 									<!-- BUTTON -->
 									<div class="material-button-anim">
 										<ul class="list-inline" id="options">
-											<li class="option"><a href="AddProjectServlet">
+											<li class="option"><a href="add_project.jsp">
 													<button class="material-button option1" type="button">
 														<span class="fa fa-plus" aria-hidden="true"></span>
 													</button>
@@ -145,7 +143,6 @@
 						         String name=res.getString(2);
 						         String startdate=res.getString(3);
 						         String enddate=res.getString(4);
-
 						         %>
 							<tr>
 								<td><a href="ProjectInfoServlet?id=<%=id%>" type="submit"><%=id%></a></td>
@@ -174,7 +171,6 @@
 							<td><progress value="21" max="100"></progress> <!-- <div class="progress-bar"> <span style= "width:3%"></span> </div><p></p> --></td>
 					
 						</tr>
-
 						<%
 							}
 							}

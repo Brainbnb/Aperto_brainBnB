@@ -18,10 +18,8 @@
 <body>
 <% //Verbindng zur Datenbank
 		try{
-
 			//loading drivers for mysql
 			Class.forName("com.mysql.jdbc.Driver");
-
 			//creating connection with the database 
 			Connection con=DriverManager.getConnection
 			("jdbc:mysql://db.f4.htw-berlin.de:3306/_s0551133__BrainBnB", "s0551133", "brainbnb");
@@ -73,7 +71,7 @@
 	<!-- PAGE -->
 	<section class="section_container" style="padding-top: 8.2%">
 		<div class="container">
-		 	<form action="add_project" method="post">
+		 	<form action="addproject" method="post">
       
 		    	<h1>Do you want do add a Project?</h1>
 		    		
@@ -113,6 +111,7 @@
 							</tr>
 						</tbody>
 					</table>
+					
 				</div>				
 				
 		    	<!-- FREIWILLIGE TEXT -->
@@ -291,6 +290,9 @@
 		    	<div class="col-xs-6">
                 		<button class="btn btn-success pull-right" type="submit">Overview</button>
             	</div>
+            				        <p >
+			        <button class="loginButton" type="submit" value="Login">Log In</button>
+			        </p>
             </form>
            </div>	
 		    
