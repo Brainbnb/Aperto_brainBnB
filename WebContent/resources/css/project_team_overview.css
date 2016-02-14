@@ -147,6 +147,7 @@ hr 						{	margin-top: 30px;
 							text-align		: center;
 							padding-left	: 8px;	}
 							
+
 .container .pattern a:hover, 
 #intmenuicon:hover		{ 	text-transform: uppercase;
 							color		: #9c0;
@@ -219,6 +220,8 @@ li .fa-circle-o:hover:before{	content: "\f192";	}
 								
 .order-table a:hover		{	color: #9c0;	
 								font-style: normal;}
+
+
 
 /****** AVATAR ******/
 
