@@ -80,7 +80,7 @@ hr 						{	margin-top: 30px;
   							height			: auto;
   							width			: 135px;	
   							box-shadow		: 2px 0px 2px rgba(0,0,0,0.19), 4px 0px 6px rgba(0,0,0,0.23);
-  							
+
   							-webkit-transition: width 0.1s;
 							-webkit-transition-timing-function: linear;
 							transition: width 0.1s;
@@ -108,7 +108,8 @@ hr 						{	margin-top: 30px;
      					 	border-bottom-style	: dotted;
      					 	padding				: 20px 50px 20px 0px;
       						width				: auto ; 												/*cambia la lunghezza della linea tratteggiata fra le sezioni*/
-      						margin				: 1px;	 }
+      						margin				: 1px;	
+      						text-align: center; }
 	
 #side_id:hover			{	background-color: #fefefe;
 							width			: auto ;
@@ -118,9 +119,6 @@ hr 						{	margin-top: 30px;
 
 #side_id a 				{	color			: #f9eaa6;
 							text-decoration	: none;
-							width			: auto;
-							text-align		: center ;
-														
 							-webkit-transition-delay: 0s; 		/*Safari*/
 							-webkit-transition-duration: 0.5s; 	/*Safari*/
   							transition-delay: 0s;
@@ -128,9 +126,8 @@ hr 						{	margin-top: 30px;
 							
 #side_id:hover a		{	color: #9c0;	}
       						
-#side_menu:hover a 		{  	text-indent	:20px;															/*qui è per centrare icona e testo ma non va, chiedere*/
-							text-align	:center;
-							display		: block;		}
+#side_menu:hover li 	{  	text-align: center;												/*qui è per centrare icona e testo ma non va, chiedere*/
+							text-indent: 24%;		}
 
 /****** SECTION ELEMENT******/
 .container			 	{	background-color: #fefefe;
@@ -225,7 +222,6 @@ li .fa-circle-o:hover:before{	content: "\f192";	}
 
 /****** AVATAR ******/
 
-
 h1.team-h1 {	margin		: 0;
   				position	: absolute;
   				top			: -20px;
@@ -248,7 +244,7 @@ h1.team-h1 {	margin		: 0;
  */
 .cf 	  {	*zoom: 1;	}
 
-.team-container {	max-width: 1000px;
+.team-container {	max-width: 80%;
   					margin: auto;
  					border-top: 1px #e9e9e9 solid;
   					border-bottom: 1px #e9e9e9 solid;

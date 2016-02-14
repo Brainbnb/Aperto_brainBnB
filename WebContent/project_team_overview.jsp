@@ -84,16 +84,16 @@ int id = (int)session.getAttribute("currentIndex");
 		<!-- SIDE MENU -->
 		<nav id="side_menu">
 			<ul class="container-fluid">
-				<li id="side_id"><a href="ProjectInfoServlet?id=<%=id%>"><i
-						class="fa fa-info fa-fw fa-2x"> </i>INFORMATION</a></li>
-				<li id="side_id"><a href="#"><i
-						class="fa fa-user fa-fw fa-2x"> </i>TEAM</a></li>
-				<li id="side_id"><a href="#workflow"><i
-						class="fa fa-folder-open-o fa-fw fa-2x"></i>WORKFLOW </a></li>
-				<li id="side_id"><a href="#resource"><i
-						class="fa fa-archive fa-fw  fa-2x"> </i>RESOURCE </a></li>
-				<li id="side_id"><a href="#calendar"><i
-						class="fa fa-calendar-o fa-fw fa-2x"> </i>CALENDAR </a></li>
+				<li id="side_id"><a href="ProjectInfoServlet?id=<%=id%>" > 
+					<i class="fa fa-info fa-fw fa-2x"></i>INFORMATION</a></li>
+				<li id="side_id"><a href="#">
+					<i class="fa fa-user fa-fw fa-2x"></i>TEAM</a></li>
+				<li id="side_id"><a href="#workflow">
+					<i class="fa fa-folder-open-o fa-fw fa-2x"></i>WORKFLOW </a></li>
+				<li id="side_id"><a href="#resource">
+					<i class="fa fa-archive fa-fw  fa-2x"> </i>RESOURCE </a></li>
+				<li id="side_id"><a href="#calendar">
+					<i class="fa fa-calendar-o fa-fw fa-2x"> </i>CALENDAR </a></li>
 			</ul>
 		</nav>
 		<%} %>
