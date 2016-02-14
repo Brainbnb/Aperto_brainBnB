@@ -106,7 +106,7 @@
 									<!-- BUTTON -->
 									<div class="material-button-anim">
 										<ul class="list-inline" id="options">
-											<li class="option"><a href="AddProjectServlet">
+											<li class="option"><a href="add_project.jsp">
 													<button class="material-button option1" type="button">
 														<span class="fa fa-plus" aria-hidden="true"></span>
 													</button>
