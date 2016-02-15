@@ -1,42 +1,26 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8" import="org.aperto.brainbnb.dto.User"
-	import="java.util.ArrayList" 
-	import="org.aperto.brainbnb.dto.Project"%>
+    pageEncoding="UTF-8"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Aperto | BrainBnB</title>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<link rel="stylesheet" href="resources/css/start_page_graph.css"
-	type="text/css" />
-<link rel="stylesheet"
-	href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<script type="text/javascript"
-	src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
-<link
-	href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
-	rel="stylesheet">
-
-
-<script
-	src='//assets.codepen.io/assets/common/stopExecutionOnTimeout.js?t=1'></script>
-<script
-	src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script
-	src='http://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js'></script>
-<script
-	src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js'></script>
-
-
-<script
-	src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script src='https://code.highcharts.com/stock/highstock.js'></script>
-<script src='https://code.highcharts.com/modules/exporting.js'></script>
-<script src='https://datejs.googlecode.com/files/date.js'></script>
-<script>
+	<title>Aperto | BrainBnB</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="resources/theme1/css/start_page_graph.css" type="text/css" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	
+	
+	<script src='//assets.codepen.io/assets/common/stopExecutionOnTimeout.js?t=1'></script>
+	<script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+	<script src='http://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js'></script>
+	
+	
+<script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script src='https://code.highcharts.com/stock/highstock.js'></script><script src='https://code.highcharts.com/modules/exporting.js'></script><script src='https://datejs.googlecode.com/files/date.js'></script>
+	<script>
 $(function () {
     var data = getData();
     var actionChart = displayHighChart(data);
@@ -1014,7 +998,7 @@ var getData = function () {
             'time': 1425488400000,
             'count': 1
         },
-        {
+       {
             'name': 'Member Account Lookup',
             'action': 'dgrResult',
             'time': 1425394800000,
@@ -2014,7 +1998,7 @@ var getData = function () {
             'name': 'Organization Location CBA History Maintenance',
             'action': 'Save',
             'time': 1425488400000,
-            'count': 2
+           'count': 2
         },
         {
             'name': 'Organization Location CBA Maintenance',
@@ -2514,7 +2498,7 @@ var getData = function () {
             'time': 1425283200000,
             'count': 1
         },
-        {
+       {
             'name': 'Organization Location Maintenance',
             'action': 'Open',
             'time': 1425286800000,
@@ -3064,7 +3048,7 @@ var getData = function () {
             'name': 'Organization Lookup',
             'action': 'Open',
             'time': 1425463200000,
-            'count': 25
+           'count': 25
         },
         {
             'name': 'Organization Lookup',
@@ -4514,7 +4498,7 @@ var getData = function () {
         },
         {
             'name': 'Organization Payperiod Maintenance',
-            'action': 'Add Row',
+          'action': 'Add Row',
             'time': 1425463200000,
             'count': 2
         },
@@ -6874,136 +6858,94 @@ var getData = function () {
     returnSeries.NavigationSeries = timeSeries;
     return returnSeries;
 };
+//# sourceURL=pen.js
 </script>
-
+	
 </head>
 <body>
 
-	<!-- NAVBAR -->
-	<header> 
-	<nav class="navbar navbar-inverse navbar-fixed-top">
-	<div class="container-fluid">
-		<div class="navbar-header">
-			<a class="navbar-brand" href="#"> <img
-				src="resources/img/aperto-logo.svg" alt="Aperto" align="left"
-				width="114px" height="21px" />
-			</a>
+<!-- NAVBAR -->
+<header>
+<nav class= "navbar navbar-inverse navbar-fixed-top" >
+	<div class= "container-fluid">
+		<div class= "navbar-header"> 
+		<a class="navbar-brand" href="#">
+			<img src= "resources/img/aperto-logo.svg" alt= "Aperto" align= "left" width= "114px" height= "21px" />	  </a>
 		</div>
 		<div>
-
-			<ul class="nav navbar-nav navbar-right">
-				<% User user = (User) session.getAttribute("user"); %>
-				<li class="user-images"><img src="<%=user.getPicturePath()%>"
-					width="50px" height="40px" /></li>
-				<li><a href="#"> <%=user.getUserName()%>
-				</a></li>
-				<li class="vertical-separator">|</li>
-				<li><a href="LogoutServlet">Log out </a></li>
-				<li class="vertical-separator">|</li>
-				<li><a href="#"> EN </a></li>
+			<ul class= "nav navbar-nav navbar-right">
+				<li class="user-images"> <img src= "resources/img/User_Bild_2.png" width="50px" height= "40px"/> </li>
+				<li> <a href= "#"> Name Surname</a> </li>
+				<li class="vertical-separator"> | </li>
+				<li> <a href= "#"> Log out </a> </li>
+				<li class="vertical-separator"> | </li>
+				<li> <a href= "#"> EN </a> </li>	
 			</ul>
 		</div>
 	</div>
-	</nav> </header>
+</nav>
+</header>
 
-	<div id="top">
-		<h2>Project Summary</h2>
+<div id= "top">
+	<h2>Project Summary</h2>
 	</div>
+	<!-- HEADER  -->
+	<div id="header">		
+	<!-- SEARCH CONTAINER -->	
+	</div>	
+<!-- MAIN -->
+<section>
 
-	<!-- MAIN -->
-	<section> 
-	<!-- SEARCH CONTAINER -->
-		<form class="search-container">
-			<input class="search-box" type="search" placeholder="Search"
-				aria-controls="datatable" />
-			<div pseudo="-webkit-input-placeholder"
-				style="display: block !important; text-overflow: clip;"></div>
-		</form>
-		
-		<!-- BUTTON -->
-		<div class="material-button-anim">
-			<ul class="list-inline" id="options">
-				<li class="option">
-					<button class="material-button option1" type="button">
-						<span class="fa fa-plus" aria-hidden="true"></span>
-					</button>
-				</li>
-				<li class="option">
-					<button class="material-button option2" type="button">
-						<span class="fa fa-bar-chart" aria-hidden="true"></span>
-					</button>
-				</li>
-				<!-- <li class="option">
-	      				<button class="material-button option3" type="button">
-	        				<span class="fa fa-pencil" aria-hidden="true"></span> 
-	      				</button>
-	    			</li> -->
-			</ul>
-			<button class="material-button material-button-toggle" type="button">
-				<span class="fa fa-bars" aria-hidden="true"></span>
-			</button>
-		</div>
-		<script> 
-				$('.material-button-toggle').click(function () {
-	        		$(this).toggleClass('open');
-	        		$('.option').toggleClass('scale-on');
-				});
-		</script> 
-	</section>
+ <!-- SEARCH CONTAINER -->
+	 <form class="search-container">
+		<input class= "search-box" type="search" placeholder="Search" aria-controls="datatable" />
+		<div pseudo="-webkit-input-placeholder" style="display: block !important; text-overflow: clip;"></div>
+	</form>
 
-	<!-- PROJECT TABLE -->
-	<div class="project-container">
-		<div class="heading">
-			<h2>Projects</h2>
-		</div>
+</section>
+<!-- PROJECT TABLE -->
 
-		<div class="content">
-			<div id="admin" onclick="myFunction()">
-				<b id="project_settings">01-Project</b><i id="icon_setting"
-					class="fa fa-caret-right"></i>
-			</div>
+ 	<div class="project-container">
+    	<div class="heading">
+      		<h2>Projects</h2>
+      	</div>
+      	
+      	<div class="content">
+			<div id="admin" onclick="myFunction()"><b id="project_settings">01-Project</b><i id="icon_setting" class="fa fa-caret-right"></i></div>
 			<div id="menu">
-				<a>
-					<table>
-						<tr>
-							<td id="td1">No.</td>
-							<td>#0001</td>
-						</tr>
-						<tr>
-							<td id="td1">Start</td>
-							<td>01.01.2016</td>
-						</tr>
-						<tr>
-							<td id="td1">Status</td>
-							<td>initiation</td>
-						</tr>
-						<tr>
-							<td id="td1">Percentage</td>
-							<td>0%</td>
-						</tr>
-						<tr>
-							<td id="td1">Cost</td>
-							<td>€ 35.100,00</td>
-						</tr>
-					</table>
-				</a>
-				<div id="container"
-					style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+					<a>
+						<table>
+							<tr>
+								<td id="td1">No.</td> <td>#0001</td>
+							</tr>
+							<tr>
+								<td id="td1">Start</td> <td>01.01.2016</td>
+							</tr>
+							<tr>
+								<td id="td1">Status</td> <td>initiation</td>
+							</tr>
+							<tr>
+								<td id="td1">Percentage</td> <td>0%</td>
+							</tr>
+							<tr>
+								<td id="td1">Cost</td> <td>€ 35.100,00</td> 
+							</tr>
+						</table>
+					</a>
+				<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>	
 			</div>
-		</div>
+		</div>	
 	</div>
-
-	<script
-		src='//assets.codepen.io/assets/common/stopExecutionOnTimeout.js?t=1'></script>
-	<script
-		src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+	
+	<script src='//assets.codepen.io/assets/common/stopExecutionOnTimeout.js?t=1'></script><script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 	<script>
 		$('#settings, #project_settings, #icon_setting').on('click', function () {
     	$('#menu').fadeToggle('fast');
 		});
 	</script>
+    </div>
+
+
 	
-
-
 </body>
 </html>
