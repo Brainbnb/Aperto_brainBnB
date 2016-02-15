@@ -85,7 +85,7 @@ hr 						{	margin-top: 30px;
 							transition: width 0.1s;
 							transition-timing-function: linear;	
 							
-							padding-top: 8.1%;				}
+							padding-top: 6.7%;				}
 
 #side_menu:not(:hover)	{	background-color: #fefefe;
 						   	position		: fixed;
@@ -144,7 +144,7 @@ hr 						{	margin-top: 30px;
   							height			: auto;
   							padding-bottom	: 30px; 
  			 				margin			: 0 auto;
- 			 				padding-top	: 8.2%;	}
+ 			 				padding-top	: 6.9%;	}
 
 .container .pattern a, 
 #intmenuicon			{ 	text-transform	: uppercase;

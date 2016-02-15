@@ -14,7 +14,7 @@
 
 </head>
 <body>
-<% //Verbindng zur Datenbank
+^	<% //Verbindng zur Datenbank
 		try{
 
 			//loading drivers for mysql
@@ -24,6 +24,7 @@
 			Connection con=DriverManager.getConnection
 			("jdbc:mysql://db.f4.htw-berlin.de:3306/_s0551133__BrainBnB", "s0551133", "brainbnb");
 		    Statement stmt = con.createStatement();%>
+		    
 	<!-- NAVBAR -->
 	<header>
 		<nav class="navbar navbar-inverse navbar-fixed-top">
@@ -87,7 +88,7 @@
 			</ul>
 		</nav>
 	</div>
-
+	
 	<!-- PAGE -->
 	<!--Pattern HTML-->
 	<section class="container">
@@ -109,8 +110,8 @@
 		<!--End Pattern HTML-->
 		<section class="cf worker-container">
 			<p id="big_p">people</p> <p>(68)</p> 
-			<p id="big_p" style="padding-left: 2%">favourites</p> <p>(3)</p>
-			
+			<p id="big_p" style="padding-left: 2%">favorites</p> <p>(3)</p>
+							
 			<!-- FIRST TABLE -->
 			<table class="fixed" style="padding-left: 11.2%" id="worker-table">
 				<col width="250px" />

@@ -1,5 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1" import="org.aperto.brainbnb.dto.User"
+	import="java.util.ArrayList" import="org.aperto.brainbnb.dto.Project"
+	import="java.sql.*"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -7,7 +9,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Aperto | BrainBnB</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<link rel="stylesheet" href="resources/theme1/css/start_page_graph.css" type="text/css" />
+	<link rel="stylesheet" href="resources/css/start_page_graph.css" type="text/css" />
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
 	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
@@ -6858,51 +6860,72 @@ var getData = function () {
     returnSeries.NavigationSeries = timeSeries;
     return returnSeries;
 };
-//# sourceURL=pen.js
 </script>
 	
 </head>
 <body>
+	<% //Verbindng zur Datenbank
+		try{
+			//loading drivers for mysql
+			Class.forName("com.mysql.jdbc.Driver");
+			//creating connection with the database 
+			Connection con=DriverManager.getConnection
+			("jdbc:mysql://db.f4.htw-berlin.de:3306/_s0551133__BrainBnB", "s0551133", "brainbnb");
+		    Statement stmt = con.createStatement();%>
 
-<!-- NAVBAR -->
-<header>
-<nav class= "navbar navbar-inverse navbar-fixed-top" >
-	<div class= "container-fluid">
-		<div class= "navbar-header"> 
-		<a class="navbar-brand" href="#">
-			<img src= "resources/img/aperto-logo.svg" alt= "Aperto" align= "left" width= "114px" height= "21px" />	  </a>
-		</div>
-		<div>
-			<ul class= "nav navbar-nav navbar-right">
-				<li class="user-images"> <img src= "resources/img/User_Bild_2.png" width="50px" height= "40px"/> </li>
-				<li> <a href= "#"> Name Surname</a> </li>
-				<li class="vertical-separator"> | </li>
-				<li> <a href= "#"> Log out </a> </li>
-				<li class="vertical-separator"> | </li>
-				<li> <a href= "#"> EN </a> </li>	
-			</ul>
-		</div>
+	<!-- NAVBAR -->
+	<header>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#"> <img
+						src="resources/img/aperto-logo.svg" alt="Aperto" align="left"
+						width="114px" height="21px" />
+					</a>
+				</div>
+				<div>
+					<ul class="nav navbar-nav navbar-right">
+						<%
+						String user = (String)session.getAttribute("user"); 				
+						String sqlEmployee = "SELECT Firstname, Surname, PicturePath FROM Employees WHERE Firstname='"+user+"'";
+				        ResultSet resEmployee = stmt.executeQuery(sqlEmployee);
+				        while(resEmployee.next()){
+				        String firstname = resEmployee.getString(1);
+				        String surname = resEmployee.getString(2);
+				        String picturePath = resEmployee.getString(3);
+				        System.out.println(picturePath);
+				         
+				         %>
+						<li class="user-images"><img
+							src="<%=picturePath%>" width="50px"
+							height="40px" /></li>
+						<li><a href="#"> <%=firstname%> <%=surname %>
+						</a></li>
+						<li class="vertical-separator">|</li>
+						<li><a href="LogoutServlet">Log out </a></li>
+						<li class="vertical-separator">|</li>
+						<li><a href="#"> EN </a></li>
+						<%} %>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<div id="top">
+		<h2>Project Summary</h2>
 	</div>
-</nav>
-</header>
-
-<div id= "top">
-	<h2>Project Summary</h2>
-	</div>
-	<!-- HEADER  -->
-	<div id="header">		
-	<!-- SEARCH CONTAINER -->	
-	</div>	
-<!-- MAIN -->
-<section>
-
- <!-- SEARCH CONTAINER -->
-	 <form class="search-container">
-		<input class= "search-box" type="search" placeholder="Search" aria-controls="datatable" />
-		<div pseudo="-webkit-input-placeholder" style="display: block !important; text-overflow: clip;"></div>
-	</form>
-
-</section>
+	
+	<!-- MAIN -->
+	<section>
+	
+	 <!-- SEARCH CONTAINER -->
+		 <form class="search-container">
+			<input class= "search-box" type="search" placeholder="Search" aria-controls="datatable" />
+			<div pseudo="-webkit-input-placeholder" style="display: block !important; text-overflow: clip;"></div>
+		</form>
+	
+	</section>
 <!-- PROJECT TABLE -->
 
  	<div class="project-container">
