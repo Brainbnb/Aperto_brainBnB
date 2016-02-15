@@ -12,7 +12,9 @@
 	
 </head>
 <body>
-<% //Verbindng zur Datenbank
+<%
+String plannedProject = (String) session.getAttribute("projectname");
+//Verbindng zur Datenbank
 		try{
 
 			//loading drivers for mysql
@@ -61,11 +63,11 @@
 
 	<!-- MAIN LOG-IN -->
 	<div id= "main" class= "container">
-		<h1>Project01</h1>
+		<h1><%=plannedProject %></h1>
 		<h2>successfully planned</h2>
 	</div>
 	<div id= "second" class= "container">
-		<a class="btn" href="#">
+		<a class="btn" href="startpage.jsp">
   			<i class="fa fa-home fa-4x"></i></a>
   	</div>
 					<% 

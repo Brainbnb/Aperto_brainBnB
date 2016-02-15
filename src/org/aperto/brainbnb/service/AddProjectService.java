@@ -50,8 +50,8 @@ public class AddProjectService {
 //			stmt.executeQuery(ps);
 			
 		      // the mysql insert statement
-		      String query = "INSERT INTO Projects (Project_ID, Name, StartDate, EndDate, Budget, PlanCost, Description, Projectmanager)"
-		        + " values (?, ?, ?, ?, ?, ?, ?, ?)";
+		      String query = "INSERT INTO Projects (Project_ID, Name, StartDate, EndDate, Budget, PlanCost, Description, Projectmanager, status)"
+		        + " values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		 
 		      // create the mysql insert preparedstatement
 		      PreparedStatement preparedStmt = con.prepareStatement(query);
@@ -63,6 +63,7 @@ public class AddProjectService {
 				preparedStmt.setInt(6, plancost);
 				preparedStmt.setString(7, description);
 				preparedStmt.setInt(8, employeeID);
+				preparedStmt.setInt(9, 1);
 
 				System.out.println("SQL");
 				System.out.println("ID: "+projectID);

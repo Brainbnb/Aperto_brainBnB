@@ -14,7 +14,10 @@
 
 </head>
 <body>
-<% //Verbindng zur Datenbank
+<% 
+int employee_id = (int) session.getAttribute("currentWorker");
+int id = (int)session.getAttribute("currentIndex");	
+//Verbindng zur Datenbank
 		try{
 
 			//loading drivers for mysql
@@ -62,21 +65,27 @@
 			</div>
 		</nav>
 	</header>
-
+<%
+	String sqlProject = "SELECT name FROM Projects WHERE project_id='"+id+"'";
+	ResultSet resProject = stmt.executeQuery(sqlProject);
+	while(resProject.next()){
+	String projectname = resProject.getString(1);
+	
+	%>
 	<div id="top">
-		<h2>01-Project
-		<a  class="btn_home" href="#">
+		<h2><%=projectname %>
+		<a  class="btn_home" href="startpage.jsp">
   			<i class="fa fa-home fa-2x"></i></a>
   		</h2>
 	</div>
-
+<%} %>
 	<div id="nav">
 		<!-- SIDE MENU -->
 		<nav id="side_menu">
 			<ul class="container-fluid">
-				<li id="side_id"><a href="#info"><i
+				<li id="side_id"><a href="ProjectInfoServlet?id=<%=id%>"><i
 						class="fa fa-info fa-fw fa-2x"> </i>INFORMATION</a></li>
-				<li id="side_id"><a href="#"><i
+				<li id="side_id"><a href="ShowTeamServlet"><i
 						class="fa fa-user fa-fw fa-2x"> </i>TEAM</a></li>
 				<li id="side_id"><a href="#workflow"><i
 						class="fa fa-folder-open-o fa-fw fa-2x"></i>WORKFLOW </a></li>

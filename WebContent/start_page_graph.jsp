@@ -6914,6 +6914,7 @@ var getData = function () {
 
 	<div id="top">
 		<h2>Project Summary</h2>
+		
 	</div>
 	
 	<!-- MAIN -->
@@ -6968,7 +6969,18 @@ var getData = function () {
 	</script>
     </div>
 
-
+		<% 
+			con.close();
+					}
+				catch(ClassNotFoundException err){
+				out.println("DB-Driver nicht gefunden");
+				out.println(err);
+				}
+				catch(SQLException err){
+				out.println("Connect nicht möglich");
+				out.println(err);
+				}
+				%>
 	
 </body>
 </html>

@@ -17,7 +17,16 @@
 </head>
 
 <body>
-<% //Verbindng zur Datenbank
+<% 
+String plannedProject = (String) session.getAttribute("projectname");
+String startdate = (String) session.getAttribute("startdate");
+String enddate = (String) session.getAttribute("enddate");
+String budget = (String) session.getAttribute("budget");
+String plancost = (String) session.getAttribute("plancost");
+String description = (String) session.getAttribute("description");
+
+
+//Verbindng zur Datenbank
 		try{
 
 			//loading drivers for mysql
@@ -68,7 +77,7 @@
 
 	<div id="top">
 		<h2>Planned Project
-		<a  class="btn_home" href="#">
+		<a  class="btn_home" href="startpage.jsp">
 	  			<i class="fa fa-home fa-2x"></i></a>
 	  	</h2>
 	</div>
@@ -78,7 +87,7 @@
 	<section class="section_container" style="padding-top: 8.2%">
 		<div class="container">
 			<form>
-				<h1>Project 01</h1>
+				<h1><%=plannedProject %></h1>
 				<h2>General Information</h2>
 
 				<div class="div_table">
@@ -88,7 +97,7 @@
 								<td><label class="control-label">Project name</label><i
 									class="bar"></i>
 								</td>
-								<td id="cell_result">Project 01</td>
+								<td id="cell_result" name="projectname"><%=plannedProject %></td>
 								<td></td>
 								<td></td>
 							</tr>
@@ -97,22 +106,22 @@
 								<td><label class="control-label">Start date</label><i
 									class="bar"></i>
 								</div></td>
-								<td id="cell_result">01.01.2016</td>
+								<td id="cell_result"><%=startdate %></td>
 								<td><label class="control-label">Budget</label><i
 									class="bar"></i>
 								</div></td>
-								<td id="cell_result">€ 3.000.000,00</td>
+								<td id="cell_result"><%=budget %> € </td>
 							</tr>
 
 							<tr>
 								<td><label class="control-label">End date</label><i
 									class="bar"></i>
 								</div></td>
-								<td id="cell_result">01.01.2017</td>
+								<td id="cell_result"><%=enddate %></td>
 								<td><label class="control-label">Plan cost</label><i
 									class="bar"></i>
 								</div></td>
-								<td id="cell_result">€ 2.500.000,00</td>
+								<td id="cell_result"><%=plancost %> € </td>
 							</tr>
 
 							<tr>
@@ -129,13 +138,7 @@
 				<div class="form-group">
 					<label class="control-label" id="description_label">Description</label><i
 						class="bar"></i>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-						do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-						enim ad minim veniam, quis nostrud exercitation ullamco laboris
-						nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-						reprehenderit in voluptate velit esse cillum dolore eu fugiat
-						nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-						sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<p><%=description %></p>
 				</div>
 
 				<h2 style="padding-top: 5%">Employees</h2>
@@ -194,15 +197,15 @@
 
 
 				<div class="col-xs-6">
-					<button class="btn btn-success" type="submit">Save</button>
+					<a href="successfully_planned.jsp"><button class="btn btn-success" type="button">Save</button></a>
 				</div>
 
 				<div class="col-xs-6">
-					<button class="btn pull-right" onclick="goBack()" type="submit">Go
+					<button class="btn pull-right" onclick="goBack()" type="button">Go
 						back</button>
 					<script>
 							function goBack() {
-    						window.history.back();	}
+    						window.location.href="DeleteProjectServlet";	}
 						</script>
 				</div>
 	</section>

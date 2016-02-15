@@ -18,9 +18,13 @@
 
 </head>
 <body>
-<% //Verbindng zur Datenbank
+<% 
+int id = (int)session.getAttribute("currentIndex");
+int employee_id = (int) session.getAttribute("currentWorker");
+String user = (String)session.getAttribute("user"); 
+//Verbindng zur Datenbank
 		try{
-
+	
 			//loading drivers for mysql
 			Class.forName("com.mysql.jdbc.Driver");
 
@@ -38,17 +42,13 @@
 				</div>
 				<div>
 					<ul class= "nav navbar-nav navbar-right">
-					<%
-						String user = (String)session.getAttribute("user"); 				
+					<%			
 						String sqlEmployee = "SELECT Firstname, Surname, PicturePath FROM Employees WHERE Firstname='"+user+"'";
 				        ResultSet resEmployee = stmt.executeQuery(sqlEmployee);
 				        while(resEmployee.next()){
 				        String firstname = resEmployee.getString(1);
 				        String surname = resEmployee.getString(2);
-				        String picturePath = resEmployee.getString(3);
-				        System.out.println(picturePath);
-				         
-				         %>
+				        String picturePath = resEmployee.getString(3);%>
 						<li class="user-images"><img
 							src="<%=picturePath%>" width="50px"
 							height="40px" /></li>
@@ -64,20 +64,24 @@
 			</div>
 		</nav>
 	</header>
-	
+	<%
+	String sqlProjects = "SELECT name FROM Projects WHERE project_id='"+id+"'";
+	ResultSet resProjects = stmt.executeQuery(sqlProjects);
+    while(resProjects.next()){
+	String projectname = resProjects.getString(1);%> 
 	<div id= "top">
-		<h2>01-Project
+		<h2><%=projectname%>
 		<a  class="btn_home" href="#">
 	  			<i class="fa fa-home fa-2x"></i></a>
 	  	</h2>
 	</div>
-	
+	<%} %>
 	<div id="nav">
 	<!-- SIDE MENU -->
 		<nav id="side_menu">
 	  		<ul class="container-fluid">
-	    		<li id="side_id"><a href="#info"		><i class="fa fa-info fa-fw fa-2x" >		</i>INFORMATION</a></li> 
-	    		<li id="side_id"><a href="#"			><i class="fa fa-user fa-fw fa-2x" >		</i>TEAM</a></li> 
+	    		<li id="side_id"><a href="ProjectInfoServlet?id=<%=id%>" 		><i class="fa fa-info fa-fw fa-2x" >		</i>INFORMATION</a></li> 
+	    		<li id="side_id"><a href="ShowTeamServlet"			><i class="fa fa-user fa-fw fa-2x" >		</i>TEAM</a></li> 
 	 			<li id="side_id"><a href="#workflow" 	><i class="fa fa-folder-open-o fa-fw fa-2x"></i>WORKFLOW   </a></li>
 	  			<li id="side_id"><a href="#resource" 	><i class="fa fa-archive fa-fw  fa-2x">		</i>RESOURCE   </a></li>
 	  			<li id="side_id"><a href="#calendar" 	><i class="fa fa-calendar-o fa-fw fa-2x">	</i>CALENDAR   </a></li>  
@@ -101,12 +105,21 @@
 			</nav>
 		</div>
 		<!--End Pattern HTML-->
+	<%
+	String sqlWorker = "SELECT e.firstname, e.surname, e.picturepath, e.jobtitle FROM Employees e WHERE e.employee_id='"+employee_id+"'";
+	ResultSet resWorker = stmt.executeQuery(sqlWorker);
+    while(resWorker.next()){
+	String firstname = resWorker.getString(1);
+	String surname = resWorker.getString(2);
+	String picturePath = resWorker.getString(3);
+	String jobTitle = resWorker.getString(4);
+	%>
 	</div>
 	
 	<figure>
-				<img  class="avatar" src="resources/img/foto_Silvia_Calafuri.jpg">
+				<img  class="avatar" src="<%=picturePath%>">
 	</figure>
-	
+
 	<section class="container">
 		<table class="order-table" id="table1">
 			<thead>
@@ -117,11 +130,11 @@
 			</thead>
 			<tbody>
 				<tr>
-					<td id="personalinfoclmtd">name		</td><td>Name Surname</td>
+					<td id="personalinfoclmtd">name		</td><td><%=firstname%> <%=surname %></td>
 					<td id="currenttaskclmtd">task	</td><td><a href="#0001_task">#0001 Task</a></td>
 				</tr>
 				<tr>
-					<td id="personalinfoclmtd">job title	</td><td id="personalinfoclmtd2">designer</td>
+					<td id="personalinfoclmtd">job title	</td><td id="personalinfoclmtd2"><%=jobTitle %></td><%} %>
 					<td id="currenttaskclmtd"></td><td>
 					
 						<div class="charts--container">
@@ -224,14 +237,20 @@
 						</script>
 					</td>
 				</tr>
-				<tr>
+				<%
+				String sqlProjectsNew = "SELECT startdate, enddate FROM Projects WHERE project_id='"+id+"'";
+				ResultSet resProjectsNew = stmt.executeQuery(sqlProjectsNew);
+   				while(resProjectsNew.next()){
+				String startdate = resProjectsNew.getString(1);
+				String enddate = resProjectsNew.getString(2);%> 
+							<tr>
 					<td id="personalinfoclmtd"></td><td id="personalinfoclmtd2"></td>
-					<td id="currenttaskclmtd">start date</td><td>01.01.2016</td>
+					<td id="currenttaskclmtd">start date</td><td><%=startdate %></td>
 				</tr>
 				<tr>
 					<td id="personalinfoclmtd"></td><td id="personalinfoclmtd2"></td>
-					<td id="currenttaskclmtd">end date</td><td>01.01.2017</td>
-				</tr>
+					<td id="currenttaskclmtd">end date</td><td><%=enddate%></td>
+				</tr> <%} %>
 			</tbody>	
 		</table>
 	</section>
@@ -245,14 +264,22 @@
 				</tr>
 			</thead>
 			<tbody>
+
 				<tr style="vertical-align: top">
 					<td id="personalinfoclmtd">available	</td><td>am I available?</td>
 					<td id="personalinfoclmtd" style="padding-left: 6%">skills		</td><td>	
-					
-					<div id="resumeProficienciesTop">css3/css</div>
-						<div id="wrapper"><div class="star-rating"><span style="width:0%"></span></div>	</div>
-											
-					<div id="resumeProficienciesTop">jquery</div>
+			<%
+			String sqlSkills = "SELECT s.skillname, sw.level FROM Skill s, Employees e, SkillWorker sw WHERE s.skill_id=sw.skill_id AND sw.employee_id=e.employee_id AND e.employee_id='"+employee_id+"'";
+			ResultSet resSkill = stmt.executeQuery(sqlSkills);
+   			while(resSkill.next()){
+			String skillname = resSkill.getString(1);
+			String levelString = resSkill.getString(2);
+			int level = Integer.parseInt(levelString);
+			%>
+					<div id="resumeProficienciesTop"><%=skillname%></div>
+						<div id="wrapper"><div class="star-rating"><span style="width:<%=level%>%"></span></div>	</div>
+					<%} %>						
+<!-- 					<div id="resumeProficienciesTop">jquery</div>
 						<div id="wrapper"><div class="star-rating"><span style="width:100%"></span></div>	</div>					
 						
 					<div id="resumeProficienciesTop">javascript</div>
@@ -268,13 +295,13 @@
 						<div id="wrapper"><div class="star-rating"><span style="width:90%"></span></div></div>						
 						
 					<div id="resumeProficienciesTop">mobile app design</div>
-						<div id="wrapper"><div class="star-rating"><span style="width:10%"></span></div>	</div>					
+						<div id="wrapper"><div class="star-rating"><span style="width:10%"></span></div>	</div>	 -->				
 					</td>
 				</tr>
 			</tbody>
 		</table>
 	</section>
-					<% 
+					<%
 			con.close();
 					}
 				catch(ClassNotFoundException err){

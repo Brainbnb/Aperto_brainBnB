@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" import="java.util.ArrayList"
 	import="org.aperto.brainbnb.dto.Project"
-	import="org.aperto.brainbnb.dto.User" import="java.sql.*"%>
+	import="org.aperto.brainbnb.dto.User" import="java.sql.*" import="java.text.DateFormat"%>
 
 <!DOCTYPE html>
 <html>
@@ -82,7 +82,7 @@
 	
 	<div id="top">
 		<h2><%=projectName %>
-		<a  class="btn_home" href="#">
+		<a  class="btn_home" href="startpage.jsp">
   			<i class="fa fa-home fa-2x"></i></a>
   		</h2>
 	</div>
@@ -91,7 +91,7 @@
 		<!-- SIDE MENU -->
 		<nav id="side_menu">
 			<ul class="container-fluid">
-				<li id="side_id"><a href="#info"><i
+				<li id="side_id"><a href="ProjectInfoServlet?id=<%=id%>"><i
 						class="fa fa-info fa-fw fa-2x"> </i>INFORMATION</a></li>
 				<li id="side_id"><a href="ShowTeamServlet"><i
 						class="fa fa-user fa-fw fa-2x"> </i>TEAM</a></li>
@@ -125,7 +125,7 @@
 					<td id="financialclmtd">budget</td>
 					<td><%=budget%> €</td>
 					<td id="financialclmtd2"></td>
-					<td id="financialclmtd2">%</td>
+<!-- 					<td id="financialclmtd2">%</td> -->
 				</tr>
 				<tr>
 					<td id="summaryclmtd">project manager</td>
@@ -133,16 +133,16 @@
 					<td id="financialclmtd">plan cost</td>
 					<td><%=planCost %> €</td>
 					<td id="financialclmtd2"></td>
-					<td id="financialclmtd2">%</td>
+<!-- 					<td id="financialclmtd2">%</td> -->
 				</tr>
 				<tr>
 					<td id="summaryclmtd"></td>
 					<td></td>
-					<td id="financialclmtd">actual cost</td>
-					<td>€€€</td>
-					<td id="financialclmtd2"><i id="graph-icon"
-						class="fa fa-bar-chart fa-2x"></i></td>
-					<td id="financialclmtd2">%</td>
+<!-- 					<td id="financialclmtd">actual cost</td>
+					<td>€€€</td> -->
+<!-- 					<td id="financialclmtd2"><i id="graph-icon"
+						class="fa fa-bar-chart fa-2x"></i></td> -->
+<!-- 					<td id="financialclmtd2">%</td> -->
 				</tr>
 			</tbody>
 		</table>
@@ -184,7 +184,12 @@
 					<td></td>
 					<td></td>
 					<td id="scheduletd2">real</td>
-					<td>01.01.01</td>
+					<td>
+						<script language="javascript" type="text/javascript">
+   						var d = new Date();
+   						document.write((d.getYear()+1900)+"-"+(d.getMonth()+1)+"-"+d.getDate());
+ </script> 	
+					</td>
 				</tr>
 			</tbody>
 		<%} %>

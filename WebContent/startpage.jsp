@@ -150,20 +150,21 @@
 						</thead>
 						<tbody>
 							<%					
-						         String sqlProject = "SELECT Project_ID, Name, StartDate, EndDate FROM Projects";
+						         String sqlProject = "SELECT p.Project_ID, p.Name, p.StartDate, p.EndDate, s.statusname FROM Projects p, Status s WHERE p.status=s.status_id ORDER BY p.project_id";
 						         ResultSet res = stmt.executeQuery(sqlProject);
 						         while(res.next()){
 						         String id=res.getString(1);
 						         String name=res.getString(2);
 						         String startdate=res.getString(3);
 						         String enddate=res.getString(4);
+						         String status=res.getString(5);
 						         %>
 							<tr>
 								<td><a href="ProjectInfoServlet?id=<%=id%>" type="submit"><%=id%></a></td>
 								<td><a href="ProjectInfoServlet?id=<%=id%>" type="submit"><%=name%></a></td>
 								<td><%=startdate%></td>
 								<td><%=enddate%></td>
-								<td>IN PROCESS</td>
+								<td><%=status %></td>
 								<td><progress value="21" max="100"></progress> <!-- <div class="progress-bar"> <span style= "width:3%"></span> </div><p></p> --></td>
 
 							</tr>

@@ -63,7 +63,7 @@
 
 	<div id="top">
 		<h2>Add Project
-		<a  class="btn_home" href="#">
+		<a  class="btn_home" href="startpage.jsp">
   			<i class="fa fa-home fa-2x"></i></a>
   		</h2>
 	</div>
@@ -259,13 +259,13 @@
 				<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 				<script>
 					$(document).ready(function () {
-					    $('#input').focus();
+/* 					    $('#input').focus(); */
 					    $('#button').click(function (e) {
 					        var add = $('#input').val();
 					        if (add !== '') {
 					            $('.list').append('<li class="item">' + add + '</li>');
 					            $('#input').val('');
-					            $('#input').focus();
+/* 					            $('#input').focus(); */
 					        }
 					    });
 					    
@@ -290,9 +290,6 @@
 		    	<div class="col-xs-6">
                 		<button class="btn btn-success pull-right" type="submit">Overview</button>
             	</div>
-            				        <p >
-			        <button class="loginButton" type="submit" value="Login">Log In</button>
-			        </p>
             </form>
            </div>	
 		    

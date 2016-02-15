@@ -52,7 +52,7 @@ int id = (int)session.getAttribute("currentIndex");
 		 %>
 					<ul class="nav navbar-nav navbar-right">
 						<li class="user-images"><img
-							src="<%=picturePath%>" width="50px" height="40px" />
+							src="<%=picturePath%>" width="50px" height="40px"/>
 						</li>
 						<li><a href="#"> <%=firstname%> <%=surname %></a></li>
 						<li class="vertical-separator">|</li>
@@ -75,7 +75,7 @@ int id = (int)session.getAttribute("currentIndex");
 	String projectname = resProjects.getString(1); 
 	System.out.println("Project: "+projectname);%>
 		<h2><%=projectname%>
-		<a  class="btn_home" href="#">
+		<a  class="btn_home" href="startpage.jsp">
   			<i class="fa fa-home fa-2x"></i></a>
   		</h2>
 	</div>
@@ -123,17 +123,18 @@ int id = (int)session.getAttribute("currentIndex");
 			<h1 class="team-h1">Meet the Team</h1>
 			<div id="team">
 				<%
-				String sqlWorker = "SELECT e.firstname, e.surname, e.picturePath, e.jobtitle FROM Employees e, Projects p, work_for w WHERE p.project_id=w.project_id AND e.employee_id=w.employee_id AND p.project_ID='"+id+"'";
+				String sqlWorker = "SELECT e.firstname, e.surname, e.picturePath, e.jobtitle, e.employee_id FROM Employees e, Projects p, work_for w WHERE p.project_id=w.project_id AND e.employee_id=w.employee_id AND p.project_ID='"+id+"'";
 				ResultSet resWorker = stmt.executeQuery(sqlWorker);
 			    while(resWorker.next()){
 				String firstname = resWorker.getString(1);
 				String surname = resWorker.getString(2);
 				String picturePath = resWorker.getString(3);
 				String jobTitel = resWorker.getString(4);
-				System.out.println("Worker: "+firstname);%>
+				String employee_id= resWorker.getString(5);
+				System.out.println("Worker: "+employee_id);%>
 							
 				<div class="team-member">
-					<img class="team-photo"	src="<%=picturePath%>">
+					<a href="ProjectTeamServlet?employee_id=<%=employee_id%>"><img class="team-photo" src="<%=picturePath%>"></a>
 					<h3><%=firstname%> <%=surname%></h3>
 					<span> <%=jobTitel%> </span>
 					<div class="social">

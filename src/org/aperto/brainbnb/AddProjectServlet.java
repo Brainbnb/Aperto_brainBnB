@@ -48,6 +48,13 @@ public class AddProjectServlet extends HttpServlet {
 		
 		AddProjectService.addProjectToDatabase(newProject, user);
 		
+		request.getSession().setAttribute("projectname", projectname);
+		request.getSession().setAttribute("startdate", startdate);
+		request.getSession().setAttribute("enddate", enddate);
+		request.getSession().setAttribute("budget", budget);
+		request.getSession().setAttribute("plancost", plancost);
+		request.getSession().setAttribute("description", description);
+		
 		RequestDispatcher rs = request.getRequestDispatcher("planned_project.jsp");
         rs.forward(request, response); //WIe kann ich ein Objekt an das nächste JSP übergeben?? 
         

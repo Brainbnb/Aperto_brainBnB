@@ -1,3 +1,5 @@
+<%@page import="org.eclipse.jdt.internal.compiler.ast.ForeachStatement"%>
+<%@page import="org.apache.jasper.tagplugins.jstl.core.ForEach"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" import="org.aperto.brainbnb.dto.Employee"
 	import="java.util.ArrayList" import="org.aperto.brainbnb.dto.User" import="java.sql.*"%>
@@ -14,7 +16,10 @@
 
 </head>
 <body>
-^	<% //Verbindng zur Datenbank
+	<% 
+	int employee_id = (int) session.getAttribute("currentWorker");
+	int id = (int)session.getAttribute("currentIndex");	
+	//Verbindng zur Datenbank
 		try{
 
 			//loading drivers for mysql
@@ -63,12 +68,18 @@
 			</div>
 		</nav>
 	</header>
-
+	<%
+	String sqlProject = "SELECT name FROM Projects WHERE project_id='"+id+"'";
+	ResultSet resProject = stmt.executeQuery(sqlProject);
+	while(resProject.next()){
+	String projectname = resProject.getString(1);
+	
+	%>
 	<div id="top">
-		<h2>01-Project
-		<a  class="btn_home" href="#">
+		<h2><%=projectname %>
+		<a  class="btn_home" href="startpage.jsp">
   			<i class="fa fa-home fa-2x"></i></a>
-  		</h2>
+  		</h2><%} %>
 	</div>
 
 	<div id="nav">
@@ -126,11 +137,20 @@
 					<th>languages</th>
 					<th>skills</th>
 				</tr>
+				<%		
+					String sqlWokers = "SELECT e.Firstname, e.Surname, e.PicturePath, e.age FROM Employees e";
+			        ResultSet resWorkers = stmt.executeQuery(sqlWokers);
+			        while(resWorkers.next()){
+			        String firstname = resWorkers.getString(1);
+			        String surname = resWorkers.getString(2);
+			        String picturePath = resWorkers.getString(3);
+			        String age = resWorkers.getString(4);
+					%>
 				<tr>
 					<td>
 					 <ul>
 						<li><figure>
-							<img  class="avatar" src="resources/img/foto_ldc.jpg">
+							<img  class="avatar" src="<%=picturePath%>">
 						</figure>
 						</li>
 					 </ul>		
@@ -139,9 +159,9 @@
 						</label>		
 						<span><a id="add_btn"><i class="fa fa-plus-square"></i> add</a></span>
 					</td>
-					<td>Leonardo DiCaprio</td>
-					<td>41</td>
-					<td><ul><li>German</li><li>English</li><li>Italian</li></ul></td>
+					<td><%=firstname %> <%=surname %></td>
+					<td><%=age %></td>
+					<td><ul><li>German</li><li>English</li><li>Spanish</li></ul></td>
 					<!--****** GRAPH ******-->
 					<td><div id="resumeProficienciesTop">css3/css</div>
 						<div id="wrapper"><div class="star-rating"><span style="width:0%"></span></div>	</div>
@@ -160,13 +180,13 @@
 					
 					<div id="resumeProficienciesTop">user interface</div>
 						<div id="wrapper"><div class="star-rating"><span style="width:90%"></span></div></div>						
-				</tr>
+				</tr>	<%} %>
 			</table>
 			
 			<hr></hr>
 			
 			<!-- SECOND TABLE -->
-			<table class="fixed" style="padding-left: 11.2%" id="worker-table">
+			<!-- <table class="fixed" style="padding-left: 11.2%" id="worker-table">
 				<col width="250px" />
 				<col width="180px" />
 				<col width="120px" />
@@ -195,7 +215,7 @@
 					<td>Johnny Depp</td>
 					<td>52</td>
 					<td><ul><li>English</li></ul></td>
-					<!--****** GRAPH ******-->
+					****** GRAPH ******
 					<td><div id="resumeProficienciesTop">css3/css</div>
 						<div id="wrapper"><div class="star-rating"><span style="width:0%"></span></div>	</div>
 											
@@ -215,9 +235,9 @@
 						<div id="wrapper"><div class="star-rating"><span style="width:90%"></span></div></div>						
 				</tr>
 			</table>
-			<hr></hr>
+			<hr></hr> -->
 			<!-- THIRD TABLE -->
-			<table class="fixed" style="padding-left: 11.2%" id="worker-table">
+			<!-- <table class="fixed" style="padding-left: 11.2%" id="worker-table">
 				<col width="250px" />
 				<col width="180px" />
 				<col width="120px" />
@@ -246,7 +266,7 @@
 					<td>George Clooney</td>
 					<td>54</td>
 					<td><ul><li>German</li><li>English</li><li>Italian</li></ul></td>
-					<!--****** GRAPH ******-->
+					****** GRAPH ******
 					<td><div id="resumeProficienciesTop">css3/css</div>
 						<div id="wrapper"><div class="star-rating"><span style="width:0%"></span></div>	</div>
 											
@@ -265,7 +285,7 @@
 					<div id="resumeProficienciesTop">user interface</div>
 						<div id="wrapper"><div class="star-rating"><span style="width:90%"></span></div></div>						
 				</tr>
-			</table>
+			</table> -->
 			
 		</section>
 	</section>
