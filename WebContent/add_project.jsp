@@ -117,9 +117,8 @@
 				
 		    	<!-- FREIWILLIGE TEXT -->
 		    	<div class="form-group">
-		      		<textarea required="required"></textarea>
-     				<input fot="textarea" type="text" name="description"/>
-		      		<label for="textarea" class="control-label" id= "description_label">Description</label><i class="bar"></i>
+		      		<textarea for="input" required="required" name="description"></textarea>
+		      		<label for="input" class="control-label" ">Description</label><i class="bar"></i>
 		    	</div>
 		    	
 		    	<h1 style="padding-top: 7%">It's time to build your Team</h1>
