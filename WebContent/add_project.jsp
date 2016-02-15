@@ -118,6 +118,7 @@
 		    	<!-- FREIWILLIGE TEXT -->
 		    	<div class="form-group">
 		      		<textarea required="required"></textarea>
+     				<input fot="textarea" type="text" name="description"/>
 		      		<label for="textarea" class="control-label" id= "description_label">Description</label><i class="bar"></i>
 		    	</div>
 		    	

@@ -34,13 +34,14 @@ public class AddProjectService {
 			while(resEmployee.next()){
 				employeeID = resEmployee.getInt(1);
 			}
-			System.out.println(employeeID);
+			System.out.println("employee: "+employeeID);
 			String sqlProject = "SELECT MAX(Project_ID) FROM Projects";
 			ResultSet resProject = stmt.executeQuery(sqlProject);
 			while(resProject.next()){
 				projectID = resProject.getInt(1) + 1;
 			}
-			System.out.println(projectID);
+			System.out.println("Projekt: "+projectID);
+
 
 			//Funktion, die letzte Project_ID rausfindet und +1 macht (für das neue Projekt)
 
@@ -63,7 +64,15 @@ public class AddProjectService {
 				preparedStmt.setString(7, description);
 				preparedStmt.setInt(8, employeeID);
 
-		 
+				System.out.println("SQL");
+				System.out.println("ID: "+projectID);
+				System.out.println("Description: "+description);
+				System.out.println("name: "+projectName);
+				System.out.println("start: "+startDate);
+				System.out.println("ende: "+endDate);
+				System.out.println("budget: "+budget);
+				System.out.println("plancost: "+plancost);
+				System.out.println("Description: "+description);
 		      // execute the preparedstatement
 		      preparedStmt.execute();
 			
