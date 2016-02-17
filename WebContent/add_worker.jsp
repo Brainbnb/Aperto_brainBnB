@@ -2,7 +2,7 @@
 <%@page import="org.apache.jasper.tagplugins.jstl.core.ForEach"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" import="org.aperto.brainbnb.dto.Employee"
-	import="java.util.ArrayList" import="org.aperto.brainbnb.dto.User" import="java.sql.*"%>
+	import="java.util.ArrayList" import="org.aperto.brainbnb.dto.User" import="org.aperto.brainbnb.service.AddWorkerService" import="java.sql.*"%>
 
 <!DOCTYPE html>
 <html>
@@ -17,7 +17,7 @@
 </head>
 <body>
 	<% 
-	int id = (int)session.getAttribute("currentIndex");	
+	String projectname = "Name";
 	//Verbindng zur Datenbank
 		try{
 
@@ -42,7 +42,8 @@
 				<div>
 					<ul class="nav navbar-nav navbar-right">
 					<%
-						String user = (String)session.getAttribute("user"); 				
+						String user = (String)session.getAttribute("user"); 	
+						
 						String sqlEmployee = "SELECT Firstname, Surname, PicturePath FROM Employees WHERE Firstname='"+user+"'";
 				        ResultSet resEmployee = stmt.executeQuery(sqlEmployee);
 				        while(resEmployee.next()){
@@ -68,10 +69,11 @@
 		</nav>
 	</header>
 	<%
+	int id = (int)session.getAttribute("currentIndex");
 	String sqlProject = "SELECT name FROM Projects WHERE project_id='"+id+"'";
 	ResultSet resProject = stmt.executeQuery(sqlProject);
 	while(resProject.next()){
-	String projectname = resProject.getString(1);
+	projectname = resProject.getString(1);
 	
 	%>
 	<div id="top">
@@ -156,7 +158,8 @@
 						<label class="add-fav"><input type="checkbox" />
   							<i class="icon-heart"></i>		
 						</label>		
-						<span><a id="add_btn"><i class="fa fa-plus-square"></i> add</a></span>
+
+						<span><a id="add_btn" href="AddToProjectServlet?user=<%=firstname%>&project=<%=projectname%>"><i class="fa fa-plus-square" >></i> add</a></span>
 					</td>
 					<td><%=firstname %> <%=surname %></td>
 					<td><%=age %></td>

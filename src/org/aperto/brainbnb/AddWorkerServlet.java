@@ -32,15 +32,21 @@ public class AddWorkerServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String currentIndexString;
 		int currentIndexInt;
-	
+		Project currentProject;
 		
 		currentIndexString = request.getParameter("id");
 		currentIndexInt = Integer.parseInt(currentIndexString);
 		System.out.println(currentIndexInt);
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		request.getSession().setAttribute("currentIndex", currentIndexInt);
-	
 		response.sendRedirect("add_worker.jsp");
+//		ProjectService projectService = new ProjectService();
+//		ArrayList<Project> projectListNew = projectService.generateProjectList();
+//		currentProject = projectListNew.get(currentIndexInt);
+//		request.getSession().setAttribute("currentProject", currentProject);
+		
+
+		return;
 	}
 
 

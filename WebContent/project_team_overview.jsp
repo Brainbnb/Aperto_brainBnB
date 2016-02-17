@@ -109,7 +109,7 @@ int id = (int)session.getAttribute("currentIndex");
 				<ul class="nav-list">
 					<li><i id="intmenuicon" class="fa fa-circle-o"><a href="#">
 								member</a></i></li>
-					<li><i id="intmenuicon" class="fa fa-circle-o"><a href="AddWorkerServlet?id=<%=id%>>" >
+					<li><i id="intmenuicon" class="fa fa-circle-o"><a href="AddWorkerServlet?id=<%=id%>" >
 								add worker</a></i></li>
 					<li><i id="intmenuicon" class="fa fa-circle-o"><a href="#">
 								add freelancer</a></i></li>
