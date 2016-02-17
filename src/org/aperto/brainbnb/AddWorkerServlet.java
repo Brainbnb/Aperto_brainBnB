@@ -9,19 +9,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.aperto.brainbnb.service.DeleteProjectService;
+import org.aperto.brainbnb.dto.Project;
 
 /**
- * Servlet implementation class DeleteProjectServlet
+ * Servlet implementation class AddWorkerServlet
  */
-@WebServlet("/DeleteProjectServlet")
-public class DeleteProjectServlet extends HttpServlet {
+@WebServlet("/AddWorkerServlet")
+public class AddWorkerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public DeleteProjectServlet() {
+    public AddWorkerServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,19 +30,18 @@ public class DeleteProjectServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String currentIndexString;
+		int currentIndexInt;
+	
 		
-		DeleteProjectService.deleteProject();
-		RequestDispatcher rs = request.getRequestDispatcher("add_project.jsp");
-        rs.forward(request, response);
-        System.out.println("TESTSERVLET");
+		currentIndexString = request.getParameter("id");
+		currentIndexInt = Integer.parseInt(currentIndexString);
+		System.out.println(currentIndexInt);
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+		request.getSession().setAttribute("currentIndex", currentIndexInt);
+	
+		response.sendRedirect("add_worker.jsp");
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
 
 }

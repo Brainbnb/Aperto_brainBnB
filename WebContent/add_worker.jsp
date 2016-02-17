@@ -17,7 +17,6 @@
 </head>
 <body>
 	<% 
-	int employee_id = (int) session.getAttribute("currentWorker");
 	int id = (int)session.getAttribute("currentIndex");	
 	//Verbindng zur Datenbank
 		try{
