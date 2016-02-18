@@ -34,7 +34,6 @@ public class DeleteProjectServlet extends HttpServlet {
 		DeleteProjectService.deleteProject();
 		RequestDispatcher rs = request.getRequestDispatcher("add_project.jsp");
         rs.forward(request, response);
-        System.out.println("TESTSERVLET");
 	}
 
 	/**

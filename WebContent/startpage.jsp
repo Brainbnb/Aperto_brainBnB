@@ -50,9 +50,7 @@
 				        while(resEmployee.next()){
 				        String firstname = resEmployee.getString(1);
 				        String surname = resEmployee.getString(2);
-				        String picturePath = resEmployee.getString(3);
-				        System.out.println(picturePath);
-				         
+				        String picturePath = resEmployee.getString(3);				         
 				         %>
 						<li class="user-images"><img
 							src="<%=picturePath%>" width="50px"

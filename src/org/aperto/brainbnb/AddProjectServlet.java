@@ -42,7 +42,6 @@ public class AddProjectServlet extends HttpServlet {
 		description = request.getParameter("description");
 		
 		user = (String) request.getSession().getAttribute("user");
-		System.out.println("hallo");
 		
 		Project newProject = new Project(projectname, startdate, budget, enddate, plancost, description);
 		
@@ -57,26 +56,5 @@ public class AddProjectServlet extends HttpServlet {
 		
 		RequestDispatcher rs = request.getRequestDispatcher("planned_project.jsp");
         rs.forward(request, response); //WIe kann ich ein Objekt an das nächste JSP übergeben?? 
-        
-//        public AddProjectServlet() {
-//            super();
-//            // TODO Auto-generated constructor stub
-//        }
-
-    	/**
-    	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-    	 */
-//    	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//    		
-    //
-//    		response.getWriter().append("Served at: ").append(request.getContextPath());
-//    		response.sendRedirect("add_project.jsp");
-//    		
-//    		return;
-//    	}
-//		LoginService loginService = new LoginService();
-//		ProjectService projectService = new ProjectService();
-//		EmployeeService employeeService = new EmployeeService();
-//		boolean result = loginService.authenticate(userID, password);
 	}
 }

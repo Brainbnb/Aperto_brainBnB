@@ -34,8 +34,6 @@ public class AddToProjectServlet extends HttpServlet {
 		
 		user = request.getParameter("user");
 		project = request.getParameter("project");
-		System.out.println(user);
-		System.out.println(project);
 		AddWorkerService.addWorker(user, project);
 	
 		response.getWriter().append("Served at: ").append(request.getContextPath());

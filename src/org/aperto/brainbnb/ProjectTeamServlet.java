@@ -33,7 +33,6 @@ public class ProjectTeamServlet extends HttpServlet {
 				
 		currenWorkerIDString = request.getParameter("employee_id");
 		currentWorkerIDInt = Integer.parseInt(currenWorkerIDString);
-		System.out.println("aktueller worker "+currentWorkerIDInt);
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		request.getSession().setAttribute("currentWorker", currentWorkerIDInt);
 		response.sendRedirect("project_team.jsp");

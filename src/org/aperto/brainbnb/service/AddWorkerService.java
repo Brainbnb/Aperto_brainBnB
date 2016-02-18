@@ -30,8 +30,6 @@ public class AddWorkerService {
 				projectID = resProject.getInt(1);
 			}
 
-			System.out.println("Hier die employeeID"+employeeID);
-			System.out.println("Hier die projectID"+projectID);
 			String query = "INSERT INTO work_for (Project_ID, Employee_ID)"
 					+ " values (?, ?)";
 
@@ -39,9 +37,6 @@ public class AddWorkerService {
 			PreparedStatement preparedStmt = con.prepareStatement(query);
 			preparedStmt.setInt(1, projectID);//ID inkrementieren
 			preparedStmt.setInt(2, employeeID);
-
-
-			System.out.println("addworker service aufgerufen");
 
 			// execute the preparedstatement
 			preparedStmt.execute();;

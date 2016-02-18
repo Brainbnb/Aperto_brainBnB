@@ -47,9 +47,7 @@
 			    while(resEmployee.next()){
 				String firstname = resEmployee.getString(1);
 				String surname = resEmployee.getString(2);
-				String picturePath = resEmployee.getString(3);
-				System.out.println(picturePath);
-		 %>
+				String picturePath = resEmployee.getString(3);%>
 					<ul class="nav navbar-nav navbar-right">
 						<li class="user-images"><img src="<%=picturePath%>"
 							width="50px" height="40px" /></li>
@@ -67,7 +65,6 @@
 		<%
 	
 	int id = (int)session.getAttribute("currentIndex");
-	System.out.println("ID: "+id);
 	String sqlProject = "SELECT p.name, e.firstname , e.surname, p.budget, p.plancost, p.description, p.startdate, p.enddate FROM Projects p, Employees e WHERE p.project_id='"+id+"' AND p.projectmanager=e.employee_id";
 	ResultSet resProject = stmt.executeQuery(sqlProject);
     while(resProject.next()){

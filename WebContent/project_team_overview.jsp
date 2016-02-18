@@ -47,9 +47,7 @@ int id = (int)session.getAttribute("currentIndex");
 			    while(resEmployee.next()){
 				String firstname = resEmployee.getString(1);
 				String surname = resEmployee.getString(2);
-				String picturePath = resEmployee.getString(3);
-				System.out.println(picturePath);
-		 %>
+				String picturePath = resEmployee.getString(3);%>
 					<ul class="nav navbar-nav navbar-right">
 						<li class="user-images"><img
 							src="<%=picturePath%>" width="50px" height="40px"/>
@@ -130,8 +128,7 @@ int id = (int)session.getAttribute("currentIndex");
 				String surname = resWorker.getString(2);
 				String picturePath = resWorker.getString(3);
 				String jobTitel = resWorker.getString(4);
-				String employee_id= resWorker.getString(5);
-				System.out.println("Worker: "+employee_id);%>
+				String employee_id= resWorker.getString(5);%>
 							
 				<div class="team-member">
 					<a href="ProjectTeamServlet?employee_id=<%=employee_id%>"><img class="team-photo" src="<%=picturePath%>"></a>

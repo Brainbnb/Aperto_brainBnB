@@ -25,7 +25,6 @@ public class DeleteProjectService {
 			while(resProject.next()){
 			projectID = resProject.getInt(1);
 			}
-			System.out.println(projectID);
 			
 			String query = "DELETE FROM Projects WHERE project_ID ='"+projectID+"'";
 			PreparedStatement preparedStmt = con.prepareStatement(query);

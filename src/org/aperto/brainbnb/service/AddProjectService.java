@@ -65,78 +65,8 @@ public class AddProjectService {
 				preparedStmt.setInt(8, employeeID);
 				preparedStmt.setInt(9, 1);
 
-				System.out.println("SQL");
-				System.out.println("ID: "+projectID);
-				System.out.println("Description: "+description);
-				System.out.println("name: "+projectName);
-				System.out.println("start: "+startDate);
-				System.out.println("ende: "+endDate);
-				System.out.println("budget: "+budget);
-				System.out.println("plancost: "+plancost);
-				System.out.println("Description: "+description);
 		      // execute the preparedstatement
 		      preparedStmt.execute();
-			
-			
-			System.out.println("endeCode");
-			
-			
-
-
-//			String query = "INSERT INTO Projects (Project_ID, Name, StartDate, EndDate, Budget, PlanCost, Description, Projectmanager) VALUES (?,?,?,?,?,?,?,?)";
-//			PreparedStatement dbStatement = null;
-//			try {
-//				dbStatement = con.prepareStatement(query);
-//			} catch (Exception e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
-//			// set parameters
-//			try {
-//				dbStatement.setInt(1, projectID);//ID inkrementieren
-//				dbStatement.setString(2, projectName);
-//				dbStatement.setString(3, startDate);
-//				dbStatement.setString(4, endDate);
-//				dbStatement.setInt(5, budget);
-//				dbStatement.setInt(6, plancost);
-//				dbStatement.setString(7, description);
-//				dbStatement.setInt(8, employeeID);//gerade eingeloggter User
-				//			} catch (Exception e) {
-				//				e.printStackTrace();
-				//			}
-				//			//Execute Query
-				//			try {
-				//				if (dbStatement.executeUpdate(query) == 0) { 
-				//					System.err.println("Nothing inserted"); 
-				//				}
-				//			} catch (Exception e) {
-				//				// TODO Auto-generated catch block
-				//				e.printStackTrace();
-				//			}
-				//
-				//			//close connection
-				//			try {
-				//				dbStatement.close();
-				//			} catch (Exception e) {
-				//				// TODO Auto-generated catch block
-				//				e.printStackTrace();
-				//			}
-				//			try {
-				//				con.close();
-				//			} catch (Exception e) {
-				//				// TODO Auto-generated catch block
-				//				e.printStackTrace();
-				//			}
-
-
-				//	         
-				//	         ps.executeQuery();
-				//	      con.close();  
-				//	      }catch(Exception e)
-				//	      {
-				//	          e.printStackTrace();
-				//	      }
-				//	  }   
 
 			con.close();
 			}catch(Exception e)
