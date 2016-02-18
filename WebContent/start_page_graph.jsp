@@ -6911,8 +6911,10 @@ var getData = function () {
 	</header>
 
 	<div id="top">
-		<h2>Project Summary</h2>
-		
+		<h2>Project Summary
+		<a  class="btn_home" href="startpage.jsp">
+	  			<i class="fa fa-home fa-2x"></i></a>
+	  	</h2>
 	</div>
 	
 	<!-- MAIN -->
@@ -6926,7 +6928,8 @@ var getData = function () {
 	
 	</section>
 <!-- PROJECT TABLE -->
-
+	<br><br>
+	
  	<div class="project-container">
     	<div class="heading">
       		<h2>Projects</h2>
@@ -6947,10 +6950,10 @@ var getData = function () {
 								<td id="td1">Status</td> <td>initiation</td>
 							</tr>
 							<tr>
-								<td id="td1">Percentage</td> <td>0%</td>
+								<td id="td1">Percentage</td> <td>50%</td>
 							</tr>
 							<tr>
-								<td id="td1">Cost</td> <td>€ 35.100,00</td> 
+								<td id="td1">Cost</td> <td>$ 35.100,00</td> 
 							</tr>
 						</table>
 					</a>

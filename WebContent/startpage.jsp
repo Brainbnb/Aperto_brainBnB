@@ -126,11 +126,7 @@
 														<span class="fa fa-bar-chart" aria-hidden="true"></span>
 													</button>
 											</a></li>
-											<!-- <li class="option">
-      				<button class="material-button option3" type="button">
-        				<span class="fa fa-pencil" aria-hidden="true"></span> 
-      				</button>
-    			</li> -->
+										
 										</ul>
 										<button class="material-button material-button-toggle"
 											type="button">
@@ -163,7 +159,7 @@
 								<td><%=startdate%></td>
 								<td><%=enddate%></td>
 								<td><%=status %></td>
-								<td><progress value="21" max="100"></progress> <!-- <div class="progress-bar"> <span style= "width:3%"></span> </div><p></p> --></td>
+								<td><progress value="50" max="100"></progress> <!-- <div class="progress-bar"> <span style= "width:3%"></span> </div><p></p> --></td>
 
 							</tr>
 							<%} %>
