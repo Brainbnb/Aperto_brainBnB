@@ -52,4 +52,83 @@ public class LoginServlet extends HttpServlet {
 	    }  
 	 
 	 
+//	    public void doPost(HttpServletRequest request, HttpServletResponse response)    
+//	            throws ServletException, IOException {    
+//	  
+//	        response.setContentType("text/html");    
+//	        PrintWriter out = response.getWriter();    
+//	          
+//	        String n=request.getParameter("userID");    
+//	        String p=request.getParameter("password");   
+//	          
+//	        HttpSession session = request.getSession(false);  
+//	        if(session!=null)  
+//	        session.setAttribute("userID", n);  
+	        
+//	    
+//	  
+//	        if(LoginService.validate(n, p)){    
+//	            RequestDispatcher rd=request.getRequestDispatcher("startpage.jsp");    
+//	            rd.forward(request,response);    
+//	        	response.sendRedirect("startpage.jsp");
+//	        	User user = loginService.getUserDetails(userID);
+//				ArrayList<Project> projectListNew = projectService.generateProjectList();
+//				ArrayList<Employee> employeeListNew = employeeService.generateEmployeeList();
+//				request.getSession().setAttribute("user", user);
+//				request.getSession().setAttribute("projectList", projectListNew);
+//				request.getSession().setAttribute("employeeList", employeeListNew);
+//				request.setAttribute("projectList", projectListNew);
+
+//				return;
+//	        }    
+//	        else{    
+//	            out.print("<p style=\"color:white\">Sorry username or password error</p>");    
+//	            RequestDispatcher rd=request.getRequestDispatcher("login.jsp");    
+//	            rd.include(request,response);    
+//	        }    
+//	  
+//	        out.close();    
+//	    }    
+	
+	
+	
+//	private static final long serialVersionUID = 1L;
+//
+//	/**
+//	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+//	 */
+//	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//		String userID, password;
+//		
+//		userID = request.getParameter("userID");
+//		password = request.getParameter("password");
+//		
+//		LoginService loginService = new LoginService();
+//		ProjectService projectService = new ProjectService();
+//		EmployeeService employeeService = new EmployeeService();
+//		boolean result = loginService.authenticate(userID, password);
+//		
+//		if (result){
+//			response.sendRedirect("startpage.jsp");
+//			User user = loginService.getUserDetails(userID);
+//			ArrayList<Project> projectListNew = projectService.generateProjectList();
+//			ArrayList<Employee> employeeListNew = employeeService.generateEmployeeList();
+//			request.getSession().setAttribute("user", user);
+//			request.getSession().setAttribute("projectList", projectListNew);
+//			request.getSession().setAttribute("employeeList", employeeListNew);
+////			request.setAttribute("projectList", projectListNew);
+//
+//			return;
+//			
+//			
+//			//response.sendRedirect(SERVLET); -- auch möglich
+//			
+//		}
+//		else{
+//			response.sendRedirect("login.jsp");
+//			return;
+//		}
+//		
+//	}
+
 }
