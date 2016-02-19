@@ -105,14 +105,14 @@ int id = (int)session.getAttribute("currentIndex");
 			<!--Begin Pattern HTML-->
 			<nav class="navigation" role="navigation">
 				<ul class="nav-list">
-					<li><i id="intmenuicon" class="fa fa-circle-o"><a href="#">
+					<li><i id="intmenuicon" class="fa fa-circle-o"><a href="ShowTeamServlet">
 								member</a></i></li>
 					<li><i id="intmenuicon" class="fa fa-circle-o"><a href="AddWorkerServlet?id=<%=id%>" >
 								add worker</a></i></li>
-					<li><i id="intmenuicon" class="fa fa-circle-o"><a href="#">
+<!-- 					<li><i id="intmenuicon" class="fa fa-circle-o"><a href="#">
 								add freelancer</a></i></li>
 					<li><i id="intmenuicon" class="fa fa-circle-o"><a href="#">
-								add skills</a></i></li>
+								add skills</a></i></li> -->
 				</ul>
 			</nav>
 		</div>

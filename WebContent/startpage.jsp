@@ -83,7 +83,6 @@
 			<script>
 			$("#search").keyup(function () {
 			    var value = this.value.toLowerCase().trim();
-
 			    $("table tr").each(function (index) {
 			        if (!index) return;
 			        $(this).find("td").each(function () {
@@ -126,7 +125,7 @@
 														<span class="fa fa-bar-chart" aria-hidden="true"></span>
 													</button>
 											</a></li>
-										
+
 										</ul>
 										<button class="material-button material-button-toggle"
 											type="button">
