@@ -75,7 +75,7 @@
 		<div class="container">
 			<form action="addproject" method="post">
 
-				<h1>Do you want do add a Project?</h1>
+				<h1>Do you want to add a Project?</h1>
 
 				<div class="div_table">
 					<table class="order-table">
